@@ -5,7 +5,7 @@ const chalk = require('chalk')
 
 //---------[ PROPIETADO/OWNER ]---------
 global.owner = [
-["595975740803", "Owner", true], 
+["524434364440", "Owner", true], 
 ["593968585383"],
 ["5492266466080"], 
 ["595992302861"], 
