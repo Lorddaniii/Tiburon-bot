@@ -5,8 +5,8 @@ const chalk = require('chalk')
 
 //---------[ PROPIETADO/OWNER ]---------
 global.owner = [
-["5492266466080", "Owner", true], 
-["573026191480", "asistencia", true], 
+["5493513485461", "Owner", true], 
+["51957581874", "asistencia", true], 
 ["593968585383"],
 ["5492266466080"], 
 ["595992302861"], 
@@ -17,7 +17,7 @@ global.premium = []
 global.blockList = []  
 
 //---------[ NOMBRE/INFO ]---------
-global.botname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
+global.botname = "Luis Gay"
 global.wm = 'Ｎ Ｏ Ｖ Ａ Ｂ Ｏ Ｔ- Ｍ Ｄ 💫'
 global.vs = '1.0.0'
 
@@ -70,7 +70,7 @@ global.APIKeys = {
 };
  
 //---------[ STICKERS ]---------
-global.packname = "𝐍𝐨𝐯𝐚𝐁𝐨𝐭-𝐌𝐃"
+global.packname = "Luis Gay"
 global.author = "1.0.0"
  
 //---------[ IMAGEN ]---------
