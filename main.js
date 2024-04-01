@@ -415,14 +415,14 @@ global.lenguaje = es
 }      
  
 //---------------------[ ANTISPAM ]------------------------
-if (global.db.data.chats[m.chat].antispam && prefix) {
+/*if (global.db.data.chats[m.chat].antispam && prefix) {
 let user = global.db.data.users[m.sender]
 let str = [nna, md, yt, tiktok, fb] 
 let info = str[Math.floor(Math.random() * str.length)]
 const date = global.db.data.users[m.sender].spam + 5000; //600000 
 if (new Date - global.db.data.users[m.sender].spam < 5000) return console.log(`[ SPAM ] ➢ ${command} [${args.length}]`)  
 global.db.data.users[m.sender].spam = new Date * 1;
-}
+}*/
 
 //---------------------[ TicTacToe ]------------------------
 let winScore = 4999
