@@ -135,7 +135,7 @@ const handler = async (m, {conn, command, participants, usedPrefix, text}) => {
 };
 handler.help = ['broadcast', 'bc'].map((v) => v + ' <teks>');
 handler.tags = ['owner'];
-handler.command = /^(bc)$/i;
+handler.command = /^(comunicar)$/i;
 
 handler.owner = true;
 
