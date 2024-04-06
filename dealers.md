@@ -4,6 +4,6 @@
  
 | USUARIO          |   CÓDIGO                | CONTACTO    | ESTADO
 | ------------     | ------------            | ------------| ------------
-| [**russellxz**](https://github.com/russellxz)        | ⚪ | ⚪ | ✅
+| [**russellxz**](https://github.com/russellxz)        | ⚪ | +447700179665 | ✅
 | ⚪        | ⚪               |  ⚪ | ⚪
 
