@@ -248,8 +248,8 @@ https://chat.whatsapp.com/FBtyc8Q5w2iJXVl5zGJdFJ
 https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q`, 
 text21: `*𝙸𝙽𝙶𝚁𝙴𝚂𝙴 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 𝙲𝙾𝙽 𝙵𝙰𝙻𝙻𝙾𝚂*\n\n*𝙴𝙹𝙴𝙼𝙿𝙻𝙾:`, 
 text22: `𝙴𝙻 𝚁𝙴𝙿𝙾𝚁𝚃𝙴 𝙵𝚄𝙴 𝙴𝙽𝚅𝙸𝙰𝙳𝙾 𝙰 𝙼𝙸 𝙲𝚁𝙴𝙰𝙳𝙾𝚁, 𝙽𝙾𝚂 𝙲𝙾𝙽𝚃𝙰𝚁𝙴𝙼𝙾𝚂 𝙲𝙾𝙽 𝚄𝚂𝚃𝙴𝙳 𝚂𝙸 𝙴𝚂 𝙽𝙴𝙲𝙴𝚂𝙰𝚁𝙸𝙾, 𝙳𝙴 𝚂𝙴𝚁 𝙵𝙰𝙻𝚂𝙾 𝚂𝙴𝚁𝙰 𝙸𝙶𝙽𝙾𝚁𝙰𝙳𝙾 𝚈 𝙱𝙻𝙾𝚀𝚄𝙴𝙰𝙳𝙾 𝙳𝙴𝙻 𝙱𝙾𝚃*`, 
-text23: `*╼╼╼╼╼╼╼[ 💖 DONACION 💖 ]╾╾╾╾╾╾╾╾*\n\n*Hola 👋, si quieres apoyar este proyecto, puedes hacerlo a través de donaciones voluntarias por PayPal, Mercado Pago o Naranja X.*\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️PayPal:*\nhttps://paypal.me/OfcGB\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️Mercado pago:*\n*• Alias :* OficialGB\n*• CVU :* 0000003100059201491917\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ Naranja X:*\n*• Alias :* OficialGL\n*• CVU :* 4530000800017922067114`, 
-text24: `*💖 ᵀᵃᵐᵇᶦᵉⁿ ᵖᵘᵉᵈᵉˢ ᶜᵒᵐᵖᵃʳᵗᶦʳ ˡᵒ ˢᶦᵍᵘᶦᵉⁿᵗᵉ ᶜᵒᵐᵒ ᴹᵘᵉˢᵗʳᵃ ᵈᵉ ᴬᵖᵒʸᵒ 💕*\n\n*❤ ᴬᵖᵒʸᵃʳ ᵉˡ ʳᵉᵖᵒˢᶦᵗᵒʳᶦᵒ ᶜᵒⁿ ᵘⁿᵃ ᵉˢᵗʳᵉˡˡᶦᵗᵃˢ ᴳʳᵃᶜᶦᵃˢ 🙏💕*`, 
+text23: (paypal) => `*╼╼╼╼╼╼╼[ 💖 DONACION 💖 ]╾╾╾╾╾╾╾╾*\n\n*Hola 👋, si quieres apoyar este proyecto, puedes hacerlo a través de donaciones voluntarias por PayPal, Mercado Pago o Naranja X.*\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️PayPal:*\n${paypal}\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️Mercado pago:*\n*• Alias :* OficialGB\n*• CVU :* 0000003100059201491917\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ Naranja X:*\n*• Alias :* OficialGL\n*• CVU :* 4530000800017922067114`, 
+text24: `> *💖 ᵀᵃᵐᵇᶦᵉⁿ ᵖᵘᵉᵈᵉˢ ᶜᵒᵐᵖᵃʳᵗᶦʳ ˡᵒ ˢᶦᵍᵘᶦᵉⁿᵗᵉ ᶜᵒᵐᵒ ᴹᵘᵉˢᵗʳᵃ ᵈᵉ ᴬᵖᵒʸᵒ 💕*\n\n*❤ ᴬᵖᵒʸᵃʳ ᵉˡ ʳᵉᵖᵒˢᶦᵗᵒʳᶦᵒ ᶜᵒⁿ ᵘⁿᵃ ᵉˢᵗʳᵉˡˡᶦᵗᵃˢ ᴳʳᵃᶜᶦᵃˢ 🙏💕*`, 
 text25: `┗❴ ⚠ 𝐀𝐃𝐕𝐄𝐑𝐓𝐄𝐍𝐂𝐈𝐀 ⚠ ❵┛\n\nᴇsᴛᴀ ᴘʀᴏʜɪʙɪᴅᴏ ᴇᴛɪǫᴜᴇᴛᴀʀ ᴀʟ ᴄʀᴇᴀᴅᴏʀ/ᴅᴇsᴀʀʀᴏʟʟᴏ sɪ ᴛɪᴇɴᴇs ᴜɴᴀ sᴜɢᴇʀᴇɴᴄɪᴀs ʀᴇғᴇʀᴇɴᴛᴇ ᴀʟ ʙᴏᴛ ᴇsᴄʀɪʙɪʀʟᴇ ᴀ sᴜs ᴘʀɪᴠ`, 
 text26: `*⚡ ¿Esta buscando un hots de calidad y al ajuste de su bolsillo?*
 
@@ -277,7 +277,41 @@ text26: `*⚡ ¿Esta buscando un hots de calidad y al ajuste de su bolsillo?*
 
 🧑‍💻 *Contacto (Diego Flores)*
 _(Dudas UNICAMENTE SOBRE EL HOST)_
-• https://wa.me/50497150165` }
+• https://wa.me/50497150165`, 
+text27: (nna, host, paypal, fb) => `*\`💫 Te presentamos un nuevo hosting: "Infinity-Wa Host"\`*
+
+*¿Muy lento tu nokia y necesitas tener activo tu bot 24/7?*
+
+> *Te tenemos la mejor opción para mantener activo tu bot 24/7, a precios muy accesibles. Es muy barato y todos pueden comprar.*
+
+*🚩Precios :*
+* 1GB, 100 CPU = 1Dolar
+* 2GB, 120 CPU = 2Dolar
+* 3GB, 140 CPU = 3Dolar
+* 4GB, 175 CPU = 4Dolar
+* 5GB, 200 CPU = 5 Dólar. 
+
+🟢 \`\`\`Información del Host\`\`\`
+
+💻 *Página:*
+https://host.panel-infinitywa.store
+
+🧡 *Canal de WhatsApp:*
+${nna}
+
+💚 *Grupo:*
+${host}
+
+🛍️ *Método de pago:*
+*• PayPal :* ${paypal}
+*• Mercado pago, alías:* OficialGB
+*• Naranja x, alías:* OficialGL
+*• Yape (Perú) :* +51948705559
+
+*\`💙 Contactanos para más información o alquidir los servicios:\`*
+• ${fb}
+• wa.me/527294888993
+• wa.me/5492964650915` }
 
 const menu = {
 text: `❐ ᴘʀᴇғɪᴊᴏ`, 
