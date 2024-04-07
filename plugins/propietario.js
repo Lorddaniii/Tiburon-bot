@@ -13,6 +13,7 @@ const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, slee
 async function owner(isCreator, m, command, conn, text, delay, fkontak, store, quoted, sender, mime, args) {
 if (!isCreator) return m.reply(info.owner) 
 if (global.db.data.users[m.sender].banned) return
+let usuario = global.db.data.users[m.sender]
 if (command == 'bcgc' || command == 'bcgroup') {
 if (!text) return conn.sendMessage(m.chat, { text: `${lenguaje.owner.text}` }, { quoted: m }); 
 let getGroups = await conn.groupFetchAllParticipating()
@@ -116,9 +117,14 @@ m.reply(`≡ ᥊⍴ ${lenguaje.owner.text19}
 ┗╍╍╍╍╍╍╍╍╍╍╍╍╍`)}
 
 if (command == 'fotobot' || command == 'nuevafoto' || command == 'seppbot') {
-if (!quoted) return m.reply(`¿Donde esta la imagen?\n\nEnviar/responder a una imagen con : ${prefix + command}`)
-if (!/image/.test(mime)) return m.reply(`Enviar/responder imagen con : ${prefix + command}`)
-if (/webp/.test(mime)) return m.reply(`Enviar/responder imagen con : ${prefix + command}`)
+if (!quoted) return m.reply(`${usuario.Language === 'es' ? '¿Donde esta la imagen?\n\nEnviar/responder a una imagen con :' : 
+usuario.Language === 'en' ? 'Where is the image?\n\nSend/reply to an image with:' : 
+usuario.Language === 'ar' ? ' أين الصورة؟\n\nأرسل/رد على الصورة باستخدام:' : 
+usuario.Language === 'pt' ? 'Onde está a imagem?\n\nEnvie/responda a uma imagem com:' : 
+usuario.Language === 'id' ? 'Dimana gambarnya?\n\nKirim/balas gambar dengan:' : 
+usuario.Language === 'rs' ? 'Где изображение?\n\nОтправьте изображение или ответьте на него с помощью:' : usuario.Language} ${prefix + command}`)
+if (!/image/.test(mime)) return m.reply(`${usuario.Language === 'es' ? 'Enviar/responder imagen con : ' : usuario.Language === 'en' ? 'Send/reply image with:' : usuario.Language === 'ar' ? ' إرسال/الرد الصورة مع:' : usuario.Language === 'pt' ? 'Enviar/responder imagem com:' : usuario.Language === 'id' ? 'Kirim/balas gambar dengan:' : usuario.Language === 'rs' ? 'Отправить/ответить на изображение с помощью:' : usuario.Language} ${prefix + command}`)
+if (/webp/.test(mime)) return m.reply(`${usuario.Language === 'es' ? 'Enviar/responder imagen con : ' : usuario.Language === 'en' ? 'Send/reply image with:' : usuario.Language === 'ar' ? ' إرسال/الرد الصورة مع:' : usuario.Language === 'pt' ? 'Enviar/responder imagem com:' : usuario.Language === 'id' ? 'Kirim/balas gambar dengan:' : usuario.Language === 'rs' ? 'Отправить/ответить на изображение с помощью:' : usuario.Language} ${prefix + command}`)
 var mediz = await conn.downloadAndSaveMediaMessage(quoted, 'ppgc.jpeg')
 if (args[0] == `full`) {
 var { img } = await generateProfilePicture(mediz)

@@ -13,12 +13,13 @@ const translate = require('@vitalets/google-translate-api')
 let tebaklagu = global.db.data.game.tebaklagu = []
 let kuismath = global.db.data.game.math = []
 let tekateki = global.db.data.game.tekateki = []
+let usuario = global.db.data.users[m.sender]
 
 async function game(m, budy, command, text, pickRandom, pushname, conn, participants, sender, who, body, ra) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
 if (budy.includes(`Bot`) || budy.includes(`simi`)) {   
-if (!text) return m.reply(`*Hola ${pushname} 👋 Quieres hablar un rato conmigo? usar de esta forma*\n\n• *Ejemplo:* ${prefix}Bot Hola`) 
+if (!text) return m.reply(`*${lenguaje['smsWel']()} ${pushname} 👋 ${usuario.Language === 'es' ? 'Quieres hablar un rato conmigo? usar de esta forma*\n\n• *Ejemplo:* #Bot Hola' : usuario.Language === 'en' ? 'Do you want to talk to me for a while? use this way*\n\n• *Example:* #Bot Hello' : usuario.Language === 'ar' ? ' هل تريد التحدث معي لفترة من الوقت؟ استخدم هذه الطريقة*\n\n• *مثال:* #Bot Hello' : usuario.Language === 'pt' ? 'Você quer conversar um pouco comigo? use desta forma*\n\n• *Exemplo:* #Bot Olá' : usuario2.Language === 'id' ? 'Apakah Anda ingin berbicara dengan saya sebentar? gunakan cara ini*\n\n• *Contoh:* #Bot Halo' : usuario.Language === 'rs' ? 'Хочешь поговорить со мной немного? используйте этот способ*\n\n• *Пример:* #Bot Hello' : usuario.Language}`) 
 try {
 await conn.sendPresenceUpdate('composing', m.chat)
 const api = await fetch('https://api.simsimi.net/v2/?budy=' + budy + '&lc=es');
@@ -116,7 +117,12 @@ let j = member[Math.floor(Math.random() * member.length)]
 conn.sendMessage(m.chat, { text: `${lenguaje.juegos.text10}\n\n*_1.- @${a.split('@')[0]} y @${b.split('@')[0]}_*\n${lenguaje.juegos.text11}\n\n*_2.- @${c.split('@')[0]} y @${d.split('@')[0]}_*\n${lenguaje.juegos.text12}\n\n*_3.- @${e.split('@')[0]} y @${f.split('@')[0]}_*\n${lenguaje.juegos.text13}\n\n*_4.- @${g.split('@')[0]} y @${h.split('@')[0]}_*\n${lenguaje.juegos.text14}\n\n*_5.- @${i.split('@')[0]} y @${j.split('@')[0]}_*\n${lenguaje.juegos.text15}`, contextInfo:{mentionedJid:[a, b, c, d, e, f, g, h, i, j]}}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
 if (command == 'top') { 
-if (!text) return m.reply(`*Ejemplo de uso:*\n.top *texto*`) 
+if (!text) return m.reply(`${usuario.Language === 'es' ? '*Ejemplo de uso:*\n.top *texto*' : 
+usuario.Language === 'en' ? '*Example usage:*\n.top *text*' : 
+usuario.Language === 'ar' ? '*مثال للاستخدام:*\n.top *text*' : 
+usuario.Language === 'pt' ? '*Exemplo de uso:*\n.top *text*' : 
+usuario.Language === 'id' ? '*Contoh penggunaan:*\n.top *teks*' : 
+usuario.Language === 'rs' ? '*Пример использования:*\n.top *text*' : usuario.Language}`) 
 let member = participants.map(u => u.id)
 let me = m.sender
 let a = member[Math.floor(Math.random() * member.length)]
@@ -155,7 +161,7 @@ let h = member[Math.floor(Math.random() * member.length)]
 let i = member[Math.floor(Math.random() * member.length)]
 let j = member[Math.floor(Math.random() * member.length)]
 const vn = 'https://qu.ax/HfeP.mp3';
-const top = `*🌈TOP 10 GAYS/LESBIANAS DEL GRUPO🌈*
+const top = `*🌈${usuario.Language === 'es' ? 'TOP 10 GAYS/LESBIANAS DEL GRUPO' : usuario.Language === 'en' ? 'TOP 10 GAY/LESBIANS OF THE GROUP' : usuario.Language === 'ar' ? ' أفضل 10 مثليين/مثليات في المجموعة' : usuario.Language === 'pt' ? 'TOP 10 GAY/LÉSBICAS DO GRUPO' : usuario.Language === 'id' ? '10 GAY/LESBIAN TERATAS DI GRUP' : usuario.Language === 'rs' ? 'ТОП-10 ГЕЕВ/ЛЕСБИЙЦЕВ ГРУППЫ' : usuario.Language}🌈*
     
 *1. @${a.split('@')[0]}*
 *2. @${b.split('@')[0]}*
@@ -186,7 +192,7 @@ let h = member[Math.floor(Math.random() * member.length)]
 let i = member[Math.floor(Math.random() * member.length)]
 let j = member[Math.floor(Math.random() * member.length)]
 const vn = 'https://qu.ax/ZgFZ.mp3';
-const top = `*🌸 TOP 10 OTAKUS DEL GRUPO 🌸*
+const top = `*🌸 ${usuario.Language === 'es' ? 'TOP 10 OTAKUS DEL GRUPO' : usuario.Language === 'en' ? 'TOP 10 OTAKUS OF THE GROUP' : usuario.Language === 'ar' ? ' أفضل 10 أوتاكو في المجموعة' : usuario.Language === 'pt' ? 'TOP 10 OTAKUS DO GRUPO' : usuario.Language === 'id' ? '10 OTAKUS TERBAIK DI GRUP' : usuario.Language === 'rs' ? 'ТОП-10 ОТАК ГРУППЫ' : usuario.Language} 🌸*
     
 *1. @${a.split('@')[0]}*
 *2. @${b.split('@')[0]}*
@@ -213,11 +219,10 @@ hasil = `${rate} Usted es ${random}% racista\n\n${ra}`
 m.reply(hasil)}
 
 if (command == 'love') {
-let love = `*❤️❤️ MEDIDOR DE AMOR ❤️❤️*
+let love = `${usuario.Language === 'es' ? '*❤️❤️ MEDIDOR DE AMOR ❤️❤️*' : usuario.Language === 'en' ? '*❤️❤️ LOVE METER ❤️❤️*' : usuario.Language === 'ar' ? '*❤️❤️ مقياس الحب ❤️❤️*' : usuario.Language === 'pt' ? '*❤️❤️ MEDIDOR DE AMOR ❤️❤️*' : usuario.Language === 'id' ? '*❤️❤️ METER CINTA ❤️❤️*' : usuario.Language === 'rs' ? '*❤️❤️ ЛЮБОВЬ МЕТР ❤️❤️*' : usuario.Language}
 
-*El amor de ${text} por ti es de* *${Math.floor(Math.random() * 100)}%* *de un 100%*
-*Deberias pedirle que sea tu  novia/o ?*
-`.trim() 
+${usuario.Language === 'es' ? '*El amor de' : usuario.Language === 'en' ? '*The love of' : usuario.Language === 'ar' ? '* حب' : usuario.Language === 'pt' ? '*O amor de' : usuario.Language === 'id' ? '*Cinta dari' : usuario.Language === 'rs' ? '*Любовь к' : usuario.Language} ${text} ${usuario.Language === 'es' ? 'por ti es de*' : usuario.Language === 'en' ? 'for you it is from*' : usuario.Language === 'ar' ? ' بالنسبة لك فهو من*' : usuario.Language === 'pt' ? 'para você é de*' : usuario.Language === 'id' ? 'untukmu itu dari*' : usuario.Language === 'rs' ? 'для тебя это от*' : usuario.Language} *${Math.floor(Math.random() * 100)}% 
+${usuario.Language === 'es' ? '*de un 100%*\n*Deberias pedirle que sea tu  novia/o ?*' : usuario.Language === 'en' ? '*100%*\n*Should you ask her to be your girlfriend?*' : usuario.Language === 'ar' ? '*100%*\n*هل يجب أن تطلب منها أن تكون صديقتك؟*' : usuario.Language === 'pt' ? '*100%*\n*Você deveria pedir a ela em namoro?*' : usuario.Language === 'id' ? '*100%*\n*Haruskah kamu memintanya menjadi pacarmu?*' : usuario.Language === 'rs' ? '*100%*\n*Стоит ли тебе предложить ей стать твоей девушкой?*' : usuario.Language}`.trim() 
 m.react('💞') 
 conn.sendMessage(m.chat, { text: love, mentions: [m.sender, text.replace('@', '') + '@s.whatsapp.net']}, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
@@ -227,7 +232,8 @@ let [text1, ...text2] = text.split(' ')
 text2 = (text2 || []).join(' ')
 if (!text2) return m.reply(lenguaje.juegos.text17) 
 let lovetext = `❤️ *${text1}* tu oportunidad de enamorarte de *${text2}* es de *${Math.floor(Math.random() * 100)}%*👩🏻‍❤️‍👨🏻`.trim()
-m.reply(lovetext, null, { mentions: conn.parseMention(lovetext)})}
+conn.sendTextWithMentions(m.chat, lovetext)}
+//m.reply(lovetext, null, { mentions: conn.parseMention(lovetext)})}
 
 if (command == 'personalidad') { 
 if (!text) return m.reply(lenguaje.juegos.text18) 
@@ -252,7 +258,7 @@ let who
 if (m.isGroup) who = m.mentionedJid[0]
 else who = m.chat
 if (!who) return m.reply(lenguaje.juegos.text19) 
-let start = `*😱 ¡¡Empezando Doxxeo!! 😱*`
+let start = `${usuario.Language === 'es' ? '*😱 ¡¡Empezando Doxxeo!! 😱*' : usuario.Language === 'en' ? '*😱 Starting Doxxeo!! 😱*' : usuario.Language === 'ar' ? '*😱 بدء دوكسكسيو !! 😱*' : usuario.Language === 'pt' ? '*😱 Iniciando o Doxxeo!! 😱*' : usuario.Language === 'id' ? '*😱 Memulai Doxxeo!! 😱*' : usuario.Language === 'rs' ? '*😱 Запускаем Doxxeo!! 😱*' : usuario.Language}`
 let boost = `*${pickRandom(['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'])}%*`
 let boost2 = `*${pickRandom(['21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'])}%*`
 let boost3 = `*${pickRandom(['41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60'])}%*`
@@ -265,11 +271,7 @@ await conn.sendMessage(m.chat, {text: boost5, edit: key});
 let old = performance.now()
 let neww = performance.now()
 let speed = `${neww - old}`
-let doxeo = `*_🤣 Persona Hackeada/doxxeada con éxito 🤣_*\n\n*_Tiempo: ${speed} segundos!_*
-
-*RESULTADOS:*
-
-*Nombre:* ${text}
+let doxeo = `${usuario.Language === 'es' ? '*_🤣 Persona Hackeada/doxxeada con éxito 🤣_*\n\n*_Tiempo:' : usuario.Language === 'en' ? '*_🤣 Person Successfully Hacked/Doxxed 🤣_*\n\n*_Time:' : usuario.Language === 'ar' ? '*_🤣 تم اختراق/تم اختراق الشخص بنجاح 🤣_*\n\n*_الوقت:' : usuario.Language === 'pt' ? '*_🤣 Pessoa hackeada/doxxada com sucesso 🤣_*\n\n*_Tempo:' : usuario.Language === 'id' ? '*_🤣 Orang Berhasil Diretas/Doxx 🤣_*\n\n*_Waktu:' : usuario.Language === 'rs' ? '*_🤣 Человек успешно взломан/доксирован 🤣_*\n\n*_Time:' : usuario.Language} ${speed} ${usuario.Language === 'es' ? 'segundos!_*\n\n*RESULTADOS:*\n\n*Nombre:*' : usuario.Language === 'en' ? ' seconds!_*\n\n*RESULTS:*\n\n*Name:*' : usuario.Language === 'ar' ? ' ثواني!_*\n\n*نتائج:*\n\n*اسم:*' : usuario.Language === 'pt' ? ' segundos!_*\n\n*RESULTADOS:*\n\n*Nome:*' : usuario.Language === 'id' ? ' detik!_*\n\n*HASIL:*\n\n*Nama:*' : usuario.Language === 'rs' ? ' секунды!_*\n\n*ПОЛУЧЕННЫЕ РЕЗУЛЬТАТЫ:*\n\n*Имя:*' : usuario.Language} ${text}
 *Ip:* 92.28.211.234
 *N:* 43 7462
 *W:* 12.4893
@@ -311,10 +313,10 @@ async function game2(m, command, sendImageAsUrl, pickRandom) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
 if (command == 'verdad') { 
-sendImageAsUrl('https://telegra.ph/file/2a2a3b03697dd33bfbb95.jpg', `𝘏𝘢𝘴 𝘦𝘴𝘤𝘰𝘨𝘪𝘥𝘰 *𝘝𝘌𝘙𝘋𝘈𝘋*\n\n╱╲❀╱╲╱╲❀╱╲╱╲❀╱╲\n◆ ${pickRandom(global.verdad)}\n╲╱❀╲╱╲╱❀╲╱╲╱❀╲╱`)}
+sendImageAsUrl('https://telegra.ph/file/2a2a3b03697dd33bfbb95.jpg', `${usuario.Language === 'es' ? '𝘏𝘢𝘴 𝘦𝘴𝘤𝘰𝘨𝘪𝘥𝘰 *𝘝𝘌𝘙𝘋𝘈𝘋*' : usuario.Language === 'en' ? 'You have chosen *TRUTH*' : usuario.Language === 'ar' ? ' لقد اخترت *الحقيقة*' : usuario.Language === 'pt' ? 'Você escolheu *VERDADE*' : usuario.Language === 'id' ? 'Anda telah memilih * KEBENARAN *' : usuario.Language === 'rs' ? 'Вы выбрали *ПРАВДУ*' : usuario.Language}\n\n╱╲❀╱╲╱╲❀╱╲╱╲❀╱╲\n◆ ${pickRandom(global.verdad)}\n╲╱❀╲╱╲╱❀╲╱╲╱❀╲╱`)}
 
 if (command == 'reto') { 
-sendImageAsUrl('https://i.ibb.co/gzfDZLv/unnamed.jpg', `𝘏𝘢𝘴 𝘦𝘴𝘤𝘰𝘨𝘪𝘥𝘰 *𝘙𝘌𝘛𝘖*\n\n╱╲❀╱╲╱╲❀╱╲╱╲❀╱╲\n◆ ${pickRandom(global.reto)}\n╲╱❀╲╱╲╱❀╲╱╲╱❀╲╱`)}
+sendImageAsUrl('https://i.ibb.co/gzfDZLv/unnamed.jpg', `${usuario.Language === 'es' ? '𝘏𝘢𝘴 𝘦𝘴𝘤𝘰𝘨𝘪𝘥𝘰 *𝘙𝘌𝘛𝘖*' : usuario.Language === 'en' ? 'You have chosen *CHALLENGE*' : usuario.Language === 'ar' ? ' لقد اخترت *التحدي*' : usuario.Language === 'pt' ? 'Você escolheu *DESAFIO*' : usuario.Language === 'id' ? 'Anda telah memilih *TANTANGAN*' : usuario.Language === 'rs' ? 'Вы выбрали *ВЫЗОВ*' : usuario.Language}\n\n╱╲❀╱╲╱╲❀╱╲╱╲❀╱╲\n◆ ${pickRandom(global.reto)}\n╲╱❀╲╱╲╱❀╲╱╲╱❀╲╱`)}
 
 if (command == 'piropo') {
 m.reply(`╱╲❀╱╲╱╲❀╱╲╱╲❀╱╲\n◆ ${pickRandom(global.piropo)}\n╲╱❀╲╱╲╱❀╲╱╲╱❀╲╱`)}}

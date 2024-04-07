@@ -84,6 +84,7 @@ conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `${lenguaje.rpg.myns2}`, 'status@
 async function rpg(m, command, participants, args, sender, pushname, text, conn, fkontak, replace, who) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
+let usuario = global.db.data.users[m.sender]
 if (command == 'lb' || command == 'leaderboard') {
 if (!m.isGroup) return m.reply(info.group) 
 let member = participants.map(u => u.id)
@@ -159,7 +160,7 @@ m.reply(lenguaje.rpg.rob7)}}
 
 if (command == 'crime' || command == 'Crime') {
 const date = global.db.data.users[m.sender].crime + 3600000; //3600000 = 1 hs
-if (new Date - global.db.data.users[m.sender].crime < 3600000) return m.reply(`*《🚓︎》LA POLICIA ESTA VIGILANDO EN ESTE MOMENTO, VUELVE EN:* ${msToTime(date - new Date())}`)
+if (new Date - global.db.data.users[m.sender].crime < 3600000) return m.reply(`${usuario.Language === 'es' ? '*《🚓︎》LA POLICIA ESTA VIGILANDO EN ESTE MOMENTO, VUELVE EN:*' : usuario.Language === 'en' ? '*《🚓︎》THE POLICE IS WATCHING AT THIS MOMENT, COME BACK IN:*' : usuario.Language === 'ar' ? '*《🚓︎》الشرطة تراقب في هذه اللحظة، عد إلى الداخل:*' : usuario.Language === 'pt' ? '*《🚓︎》A POLÍCIA ESTÁ DE OLHO NESTE MOMENTO, VOLTE:*' : usuario.Language === 'id' ? '*《🚓︎》POLISI MENONTON SAAT INI, DATANG KEMBALI:*' : usuario.Language === 'rs' ? '*《🚓︎》В ЭТОТ МОМЕНТ ПОЛИЦИЯ НАБЛЮДАЕТ, ЗАХОДИТЕ:*' : usuario.Language} ${msToTime(date - new Date())}`)
 const exp = Math.floor(Math.random() * 9000)
 const diamond = Math.floor(Math.random() * 90)
 const money = Math.floor(Math.random() * 9000)
@@ -193,22 +194,35 @@ let user = global.db.data.users[who]
 if (!(who in global.db.data.users)) return m.reply(lenguaje.grupos.text31)
 conn.sendMessage(m.chat, {text: `•───⧼⧼⧼ 𝙱𝙰𝙻𝙰𝙽𝙲𝙴 ⧽⧽⧽───•
 
-@${who.split('@')[0]} ${user.registered === true ? '✓' : ''} Tiene : 
+@${who.split('@')[0]} ${user.registered === true ? '✓' : ''} ${usuario.Language === 'es' ? 'Tiene :' : 
+usuario.Language === 'en' ? 'Has :' : 
+usuario.Language === 'ar' ? ' لديه :' : 
+usuario.Language === 'pt' ? 'Tem :' : 
+usuario.Language === 'id' ? 'Memiliki :' : 
+usuario.Language === 'rs' ? 'Имеет :' : usuario.Language}
 
 *💎 𝙳𝙸𝙰𝙼𝙰𝙽𝚃𝙴 :* ${user.limit}
 *⬆️ 𝙴𝚇𝙿 :* ${user.exp}
 *🪙 𝙲𝙾𝙸𝙽𝚂 :* ${user.money}
-> Afuera del Banco 
+> ${usuario.Language === 'es' ? 'Afuera del Banco ' : 
+usuario.Language === 'en' ? 'Outside the Bank' : 
+usuario.Language === 'ar' ? ' خارج البنك' : 
+usuario.Language === 'pt' ? 'Fora do Banco' : 
+usuario.Language === 'id' ? 'Di Luar Bank' : 
+usuario.Language === 'rs' ? 'За пределами банка' : usuario.Language}
 
-•───⧼⧼⧼ 𝙱𝙰𝙽𝙲𝙾 ⧽⧽⧽───•
-
-*🏦 𝙳𝙸𝙽𝙴𝚁𝙾 :* ${user.banco}
-> Adentro del Banco 🏦 
-
-•───────────────•
-
-> 📒 𝐍𝐎𝐓𝐀 : 𝐏𝐮𝐞𝐝𝐞 𝐜𝐨𝐦𝐩𝐫𝐚𝐫 𝐦𝐚𝐬 💎 𝐝𝐢𝐚𝐦𝐚𝐧𝐭𝐞
-> 𝐮𝐬𝐚𝐧𝐝𝐨 𝐥𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐞 𝐚𝐛𝐚𝐣𝐨: 
+*${usuario.Language === 'es' ? '•───⧼⧼⧼ 𝙱𝙰𝙽𝙲𝙾 ⧽⧽⧽───•\n\n🏦 𝙳𝙸𝙽𝙴𝚁𝙾 :' : 
+usuario.Language === 'en' ? '•───⧼⧼⧼ BANK ⧽⧽⧽───•\n\n🏦 MONEY:' : 
+usuario.Language === 'ar' ? '•───⧼⧼⧼ البنك ⧽⧽⧽───•\n\n🏦 المال:' :  
+usuario.Language === 'pt' ? '•───⧼⧼⧼ BANCO ⧽⧽⧽───•\n\n🏦 DINHEIRO:' : 
+usuario.Language === 'id' ? '•───⧼⧼⧼ BANK ⧽⧽⧽───•\n\n🏦 UANG:' : 
+usuario.Language === 'rs' ? '•───⧼⧼⧼ БАНК ⧽⧽⧽───•\n\n🏦 ДЕНЬГИ:' : usuario.Language}* ${user.banco}
+${usuario.Language === 'es' ? '> Adentro del Banco 🏦 \n\n•───────────────•\n\n> 📒 𝐍𝐎𝐓𝐀 : 𝐏𝐮𝐞𝐝𝐞 𝐜𝐨𝐦𝐩𝐫𝐚𝐫 𝐦𝐚𝐬 💎 𝐝𝐢𝐚𝐦𝐚𝐧𝐭𝐞\n> 𝐮𝐬𝐚𝐧𝐝𝐨 𝐥𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐞 𝐚𝐛𝐚𝐣𝐨: ' : 
+usuario.Language === 'en' ? '> Inside the Bank 🏦 \n\n•───────────────•\n\n> 📒 𝐍𝐎𝐓𝐄: 𝐘𝐨𝐮 𝐜𝐚𝐧 𝐛𝐮𝐲 𝐦𝐨𝐫𝐞 💎 𝐝𝐢𝐚𝐦𝐨𝐧𝐝\n> 𝐔𝐬𝐢𝐧𝐠 𝐭𝐡𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐛𝐞𝐥𝐨𝐰:' : 
+usuario.Language === 'ar' ? '> داخل البنك 🏦 \n\n•─────────────•\n\n> 📒 ملاحظة: يمكنك شراء المزيد من 💎 الماس\n> باستخدام الأوامر أدناه:' : 
+usuario.Language === 'pt' ? '> Dentro do Banco 🏦 \n\n•───────────────•\n\n> 📒 𝐍𝐎𝐓𝐀: 𝐕𝐨𝐜𝐞̂ 𝐩𝐨𝐝𝐞 𝐜𝐨𝐦𝐩𝐫𝐚𝐫 𝐦𝐚𝐢𝐬 💎 𝐝𝐢𝐚𝐦𝐚𝐧𝐭𝐞\n> 𝐔𝐭𝐢𝐥𝐢𝐳𝐚𝐧𝐝𝐨 𝐨𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬 𝐚𝐛𝐚𝐢𝐱𝐨:' : 
+usuario.Language === 'id' ? '> Di Dalam Bank 🏦 \n\n•────────────────•\n\n> 📒 CATATAN: Anda dapat membeli lebih banyak 💎 berlian\n> Menggunakan perintah di bawah ini:' : 
+usuario.Language === 'rs' ? '> Внутри Банка 🏦 \n\n•──────────────•\n\n> 📒 ПРИМЕЧАНИЕ: Вы можете купить больше 💎 алмазов\n> Используя команды ниже:' : usuario.Language}
 > • ${prefix}buy <cantidad>
 > • ${prefix}buyall`, mentions: [who]}, {quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 }
@@ -218,39 +232,74 @@ let who;
 if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
 else who = m.sender;
 let users =  global.db.data.users[m.sender];
-if (!args[0]) return m.reply('*[ ⚠️ ] Ingresa la cantidad para agregar a sus cuenta bancaria*');
+if (!args[0]) return m.reply(`[ ⚠️ ] ${usuario.Language === 'es' ? '*Ingresa la cantidad para agregar a sus cuenta bancaria*' : 
+usuario.Language === 'en' ? '*Enter the amount to add to your bank account*' : 
+usuario.Language === 'ar' ? '*أدخل المبلغ المراد إضافته إلى حسابك البنكي*' : 
+usuario.Language === 'pt' ? '*Insira o valor a ser adicionado à sua conta bancária*' : 
+usuario.Language === 'id' ? '*Masukkan jumlah yang ingin ditambahkan ke rekening bank Anda*' : 
+usuario.Language === 'rs' ? '*Введите сумму для пополнения вашего банковского счета*' : usuario.Language}`);
 if (args[0] == '--all') {
 let count = parseInt(users.limit);
 users.limit -= count * 1
 users.banco += count * 1
-await m.reply(`*[ 🏦 ] Has agregados (${count}) diamante 💎 al Banco.*`);
+await m.reply(`*[ 🏦 ] ${usuario.Language === 'es' ? 'Has agregados' : usuario.Language === 'en' ? 'You have added' : usuario.Language === 'ar' ? ' لقد قمت بإضافة' : usuario.Language === 'pt' ? 'você foi adicionado' : usuario.Language === 'id' ? 'Anda telah menambahkan' : usuario.Language === 'rs' ? 'Вы добавили' : usuario.Language} (${count}) ${usuario.Language === 'es' ? 'diamante 💎 al Banco' : usuario.Language === 'en' ? 'diamond 💎 to the Bank' : usuario.Language === 'ar' ? ' الماس 💎 للبنك' : usuario.Language === 'pt' ? 'diamante 💎 para o Banco' : usuario.Language === 'id' ? 'berlian 💎 ke Bank' : usuario.Language === 'rs' ? 'алмаз 💎 в банк' : usuario.Language}.*`);
 return !0;
 };
-if (!Number(args[0])) return m.reply('*[ ⚠️ ] Falto en número de cantidad de diamante 💎*');
+if (!Number(args[0])) return m.reply(`[ ⚠️ ] ${usuario.Language === 'es' ? '*Falto en número de cantidad de diamante 💎*' : usuario.Language === 'en' ? '*Missing diamond quantity number 💎*' : usuario.Language === 'ar' ? '*رقم الكمية الماسية مفقود 💎*' : usuario.Language === 'pt' ? '*Faltando o número da quantidade de diamantes 💎*' : usuario.Language === 'id' ? '*Nomor kuantitas berlian tidak ada 💎*' : usuario.Language === 'rs' ? '*Отсутствует номер количества бриллиантов 💎*' : usuario.Language}`);
 let count = parseInt(args[0]);
-if (!users.limit) return m.reply('*Esta pobre no tener suficiente diamante*');
-if (users.limit < count) return m.reply(`*Che no sabes cuanto dinero tiene el tu cartera? usar el comando:* #bal`);
+if (!users.limit) return m.reply(`${usuario.Language === 'es' ? '*Esta pobre no tener suficiente diamante*' : usuario.Language === 'en' ? '*It"s poor not to have enough diamond*' : usuario.Language === 'ar' ? '*من السيء ألا يكون لديك ما يكفي من الماس*' : usuario.Language === 'pt' ? '*É ruim não ter diamantes suficientes*' : usuario.Language === 'id' ? '*Sangat disayangkan jika tidak memiliki cukup berlian*' : usuario.Language === 'rs' ? '*Плохо, когда не хватает алмазов*' : usuario.Language}`);
+if (users.limit < count) return m.reply(`${usuario.Language === 'es' ? '*Che no sabes cuanto dinero tiene el tu cartera? usar el comando:*' : usuario.Language === 'en' ? '*You don"t know how much money is in your wallet? use the command:*' : usuario.Language === 'ar' ? '* أنت لا تعرف كم من المال في محفظتك؟ استخدم الأمر:*' : usuario.Language === 'pt' ? '*Você não sabe quanto dinheiro tem na sua carteira? use o comando:*' : usuario.Language === 'id' ? '*Anda tidak tahu berapa banyak uang yang ada di dompet Anda? gunakan perintah:*' : usuario.Language === 'rs' ? '*Вы не знаете, сколько денег в вашем кошельке? используйте команду:*' : usuario.Language} #bal`);
 users.limit -= count * 1;
 users.banco += count * 1;
-await m.reply(`*[ 🏦 ] Has ingresando ${count} diamante al Banco*`)}
+await m.reply(`*[ 🏦 ] ${usuario.Language === 'es' ? 'Has ingresando' : 
+usuario.Language === 'en' ? 'You have entered' : 
+usuario.Language === 'ar' ? ' أنت قد دخلت' : 
+usuario.Language === 'pt' ? 'Você entrou' : 
+usuario.Language === 'id' ? 'Anda telah masuk' : 
+usuario.Language === 'rs' ? 'Вы вошли' : usuario.Language} ${count} ${usuario.Language === 'es' ? 'diamante al Banco' : 
+usuario.Language === 'en' ? 'diamond to the bank' : 
+usuario.Language === 'ar' ? ' الماس إلى البنك' : 
+usuario.Language === 'pt' ? 'diamante para o banco' : 
+usuario.Language === 'id' ? 'berlian ke bank' : 
+usuario.Language === 'rs' ? 'бриллиант в банк' : usuario.Language}*`)}
   
 if (command == 'retirar' || command == 'toremove') {     
 let user =  global.db.data.users[m.sender]
-if (!args[0]) return m.reply('*[ ⚠️ ] ingresa la cantidad a retirar*');
+if (!args[0]) return m.reply(`[ ⚠️ ] ${usuario.Language === 'es' ? '*ingresa la cantidad a retirar*' : 
+usuario.Language === 'en' ? '*enter the amount to withdraw*' : 
+usuario.Language === 'ar' ? '*أدخل المبلغ المراد سحبه*' : 
+usuario.Language === 'pt' ? '*insira o valor a ser sacado*' : 
+usuario.Language === 'id' ? '*masukkan jumlah yang akan ditarik*' : 
+usuario.Language === 'rs' ? '*введите сумму для вывода*' : usuario.Language}`);
 if (args[0] == '--all') {
 let count = parseInt(user.banco);
 user.banco -= count * 1
 user.limit += count * 1
-await m.reply(`*[ 🏦 ] Retiraste (${count}) diamante 💎 del Banco.*`);
+await m.reply(`*[ 🏦 ] ${usuario.Language === 'es' ? 'Retiraste' : usuario.Language === 'en' ? 'You took it back' : usuario.Language === 'ar' ? ' لقد استعادتها' : usuario.Language === 'pt' ? 'Retiraste' : usuario.Language === 'id' ? 'Anda mengambilnya kembali' : usuario.Language === 'rs' ? 'Ты забрал это обратно' : usuario.Language} (${count}) ${usuario.Language === 'es' ? 'diamante 💎 del Banco' : 
+usuario.Language === 'en' ? 'diamond 💎 from the Bank' : 
+usuario.Language === 'ar' ? ' الماس 💎 من البنك' : 
+usuario.Language === 'pt' ? 'diamante 💎 do Banco' : 
+usuario.Language === 'id' ? 'berlian 💎 dari Bank' : 
+usuario.Language === 'rs' ? 'бриллиант 💎 из банка' : usuario.Language}.*`);
 return !0 
 }
-if (!Number(args[0])) return m.reply('La cantidad debe ser un mumero.'); 
+if (!Number(args[0])) return m.reply(`${usuario.Language === 'es' ? 'La cantidad debe ser un mumero.' : 
+usuario.Language === 'en' ? 'The amount must be a number.' : 
+usuario.Language === 'ar' ? ' يجب أن يكون المبلغ رقمًا.' : 
+usuario.Language === 'pt' ? 'O valor deve ser um número.' : 
+usuario.Language === 'id' ? 'Jumlahnya harus berupa angka.' : 
+usuario.Language === 'rs' ? 'Сумма должна быть числом.' : usuario.Language}`); 
 let count = parseInt(args[0]);
-if (!user.banco) return m.reply('Hey fantasma 👻, no tener esa cantidad de dinero el banco 🥲');
-if (user.banco < count) return m.reply(`*Che no sabes cuanto dinero tiene el tu cartera? usar el comando:* #bal`);
+if (!user.banco) return m.reply(`${usuario.Language === 'es' ? 'Hey fantasma 👻, no tener esa cantidad de dinero el banco 🥲' : 
+usuario.Language === 'en' ? 'Hey ghost 👻, the bank doesn"t have that amount of money 🥲' :  
+usuario.Language === 'ar' ? ' أيها الشبح 👻، البنك ليس لديه هذا المبلغ من المال 🥲' : 
+usuario.Language === 'pt' ? 'Ei fantasma 👻, o banco não tem essa quantia de dinheiro 🥲' : 
+usuario.Language === 'id' ? 'Hei hantu 👻, bank tidak punya uang sebanyak itu 🥲' : 
+usuario.Language === 'rs' ? 'Эй, призрак 👻, в банке нет такой суммы денег 🥲' : usuario.Language}`);
+if (user.banco < count) return m.reply(`${usuario.Language === 'es' ? '*Che no sabes cuanto dinero tiene el tu cartera? usar el comando:*' : usuario.Language === 'en' ? '*You don"t know how much money is in your wallet? use the command:*' : usuario.Language === 'ar' ? '* أنت لا تعرف كم من المال في محفظتك؟ استخدم الأمر:*' : usuario.Language === 'pt' ? '*Você não sabe quanto dinheiro tem na sua carteira? use o comando:*' : usuario.Language === 'id' ? '*Anda tidak tahu berapa banyak uang yang ada di dompet Anda? gunakan perintah:*' : usuario.Language === 'rs' ? '*Вы не знаете, сколько денег в вашем кошельке? используйте команду:*' : usuario.Language} #bal`);
 user.banco -= count * 1
 user.limit += count * 1
-await m.reply(`*[ 🏦 ] Has Retirado (${count}) dinero del Banco.*`)}
+await m.reply(`*[ 🏦 ] ${usuario.Language === 'es' ? 'Has Retirado' : usuario.Language === 'en' ? 'You have withdrawn' : usuario.Language === 'ar' ? ' لقد انسحبت' : usuario.Language === 'pt' ? 'Você se retirou' : usuario.Language === 'id' ? 'Anda telah menarik diri' : usuario.Language === 'rs' ? 'Вы отозвали' : usuario.Language} (${count}) ${usuario.Language === 'es' ? 'dinero del Banco.' : usuario.Language === 'en' ? 'Money of the bank.' : usuario.Language === 'ar' ? ' أموال البنك.' : usuario.Language === 'pt' ? 'Dinheiro do banco.' : usuario.Language === 'id' ? 'Uang bank.' : usuario.Language === 'rs' ? 'Деньги банка.' : usuario.Language}*`)}
 
 if (command == 'minar' || command == 'mine') {
 const date = global.db.data.users[m.sender].lastmiming + 600000;

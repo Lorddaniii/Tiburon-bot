@@ -16,6 +16,7 @@ require('../main')
 async function grupo(m, command, isGroupAdmins, text, conn, participants, isBotAdmins, args, isCreator, delay, sender, quoted, mime, from, isCreator, groupMetadata, fkontak, delay, store) {
 //if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
+let usuario = global.db.data.users[m.sender]
 if (command == 'hidetag' || command == 'notificar' || command == 'tag') {  
 if (!m.isGroup) return m.reply(info.group) 
 if (!isGroupAdmins) return m.reply(info.admin)
@@ -29,7 +30,7 @@ if (command == 'grupo') {
 if (!m.isGroup) return m.reply(info.group);  
 if (!isBotAdmins) return m.reply(info.botAdmin);  
 if (!isGroupAdmins) return m.reply(info.admin)
-if (!text) return conn.sendPoll(m.chat, `${lenguaje.enable.text}\n*${prefix + command} abrir*\n*${prefix + command} cerrar*\nSelecione una de esta opción`, ['grupo abrir','grupo cerrar'])
+if (!text) return conn.sendPoll(m.chat, `${lenguaje.enable.text}\n*${prefix + command} abrir*\n*${prefix + command} cerrar*`, ['grupo abrir','grupo cerrar'])
 //m.reply(`${lenguaje.enable.text}\n*${prefix + command} abrir*\n*${prefix + command} cerrar*`)
 if (args[0] === 'abrir') {
 m.reply(lenguaje.grupos.text1)
@@ -51,14 +52,29 @@ return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id
   
 if (command == 'setrules' || command == 'addrules' || command == 'addrule') {  
 let chat = global.db.data.chats[m.chat]
-if (!text) return m.reply(`⚠️ Escriba la reglas de este grupo!`) 
+if (!text) return m.reply(`⚠️ ${usuario.Language === 'es' ? 'Escriba la reglas de este grupo!' :  
+usuario.Language === 'en' ? 'Write the rules of this group!' : 
+usuario.Language === 'ar' ? ' اكتب قواعد هذه المجموعة!' : 
+usuario.Language === 'pt' ? 'Escreva as regras deste grupo!' : 
+usuario.Language === 'id' ? 'Tuliskan peraturan grup ini!' : 
+usuario.Language === 'rs' ? 'Напишите правила этой группы!' : usuario.Language}`)  
 chat.rules = text
 m.reply(`${lenguaje['exito']()}`)}
  
 if (command == 'rules') { 
 let chat = global.db.data.chats[m.chat]
-if (!chat.rules === '') m.reply(`*Grupo sin reglas 😜*`) 
-m.reply(`*\`⚠️ ＲＥＧＬＡ ＤＥＬ ＧＲＵＰＯ :\`*\n\n${chat.rules}`)}
+if (!chat.rules === '') m.reply(`${usuario.Language === 'es' ? '*Grupo sin reglas 😜*' : 
+usuario.Language === 'en' ? '*Group without rules 😜*' : 
+usuario.Language === 'ar' ? '*مجموعة بدون قواعد 😜*' : 
+usuario.Language === 'pt' ? '*Grupo sem regras 😜*' : 
+usuario.Language === 'id' ? '*Grup tanpa aturan 😜*' : 
+usuario.Language === 'rs' ? '*Группа без правил 😜*' : usuario.Language}`) 
+m.reply(`*\`⚠️ ${usuario.Language === 'es' ? 'ＲＥＧＬＡ ＤＥＬ ＧＲＵＰＯ' : 
+usuario.Language === 'en' ? 'ＧＲＯＵＰ ＲＵＬＥ' : 
+usuario.Language === 'ar' ? ' قاعدة المجموعة' : 
+usuario.Language === 'pt' ? 'ＲＥＧＲＡ ＤＯ ＧＲＵＰＯ' : 
+usuario.Language === 'id' ? 'ＡＴＵＲＡＮ ＫＥＬＯＭＰＯＫ' : 
+usuario.Language === 'rs' ? 'ПРАВИЛО ГРУППЫ' : usuario.Language} :\`*\n\n${chat.rules}`)}
   
 if (command == 'join' || command == 'unete') {
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
@@ -197,7 +213,17 @@ const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).
 const owner = groupMetadata.owner || groupAdmins.find((p) => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net';
 const pesan = args.join` `;
 const oi = `${lenguaje.grupos.text21} ${pesan}`;
-const text = `═✪〘 *ＩＮＶＯＣＡＮＤＯ ＡＤＭＩＮＳ* 〙✪═\n\n• *ɢʀᴜᴘᴏ:* [ ${groupMetadata.subject} ]\n\n• ${oi}\n\n• *ᴀᴅᴍɪɴs:*\n➥ ${listAdmin}\n\n${lenguaje.grupos.text22}`.trim(); 
+const text = `═✪〘 *${usuario.Language === 'es' ? '*ＩＮＶＯＣＡＮＤＯ ＡＤＭＩＮＳ*' : 
+usuario.Language === 'en' ? '*ＳＵＭＭＯＮＩＮＧ ＡＤＭＩＮＩＳＴＲＡＴＯＲＳ*' : 
+usuario.Language === 'ar' ? '*استدعاء المسؤولين*' : 
+usuario.Language === 'pt' ? '*ＩＮＶＯＣＡＮＤＯ ＡＤＭＩＮＩＳＴＲＡＤＯＲ ＥＳ*' : 
+usuario.Language === 'id' ? '*ＰＡＮＧＧＩＬＡＮ ＡＤＭＩＮＩＳＴＲＡＤＯＲ*' : 
+usuario.Language === 'rs' ? '*ВЫЗОВ АДМИНИСТРАТОРОВ*' : usuario.Language} 〙✪═\n\n• ${usuario.Language === 'es' ? '*ɢʀᴜᴘᴏ:*' : 
+usuario.Language === 'en' ? '*ɢʀᴏᴜᴘ:*' : 
+usuario.Language === 'ar' ? '*مجموعة:*' : 
+usuario.Language === 'pt' ? '*ɢʀᴜᴘᴏ:*' : 
+usuario.Language === 'id' ? '*ᴋᴇʟᴏᴍᴘᴏᴋ:*' : 
+usuario.Language === 'rs' ? '*Группа:*' : usuario.Language} [ ${groupMetadata.subject} ]\n\n• ${oi}\n\n• *ᴀᴅᴍɪɴs:*\n➥ ${listAdmin}\n\n${lenguaje.grupos.text22}`.trim(); 
 conn.sendMessage(m.chat, { text: text, mentions: participants.map(a => a.id) }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
 if (command == 'infogrupo' || command == 'groupinfo') {
@@ -299,7 +325,12 @@ const user = global.db.data.users;
 const imagewarn = './src/warn.jpg';
 const caption = `${lenguaje.grupos.text32}\n 
 ╔═══════════════════·•
-║ *𝚃𝚘𝚝𝚊𝚕 : ${adv.length} ${lenguaje.grupos.text33} ${adv ? '\n' + adv.map(([jid, user], i) => `
+║ ${usuario.Language === 'es' ? '*𝚃𝚘𝚝𝚊𝚕 :*' : 
+usuario.Language === 'en' ? '*𝚃𝚘𝚝𝚊𝚕:*' : 
+usuario.Language === 'ar' ? '*المجموع:*' : 
+usuario.Language === 'pt' ? '*𝚃𝚘𝚝𝚊𝚕:*' : 
+usuario.Language === 'id' ? '*𝚃𝚘𝚝𝚊𝚕:*' : 
+usuario.Language === 'rs' ? '*Общий:*' : usuario.Language} ${adv.length} ${lenguaje.grupos.text33} ${adv ? '\n' + adv.map(([jid, user], i) => `
 ║
 ║ 1.- ${isCreator ? '@' + jid.split`@`[0] : jid} *(${user.warn}/4)*\n║\n║ - - - - - - - - -`.trim()).join('\n') : ''}
 ╚══════════════════·•`;

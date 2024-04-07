@@ -9,6 +9,7 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const Jimp = require('jimp')
 const os = require('os')
+let usuario = global.db.data.users[m.sender]
 
 const menu = (m, command, conn, prefix, pushname, sender, pickRandom, fkontak) => {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
@@ -22,10 +23,10 @@ let wa = m.key.id.length > 21 ? 'Android' : m.key.id.substring(0, 2) == '3A' ? '
 let submenu = `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩
 ┊┏━━━━━━━━━━━━━━•
 ┊┃ ┏━━━━━━━━━━━━━━•
-┊┃ ┃ \`👥 INFO DEL USUARIO\`
+┊┃ ┃ \`👥 ${usuario.Language === 'es' ? 'INFO DEL USUARIO' : usuario.Language === 'en' ? 'USER INFO' :  usuario.Language === 'ar' ? ' معلومات المستخدم' : usuario.Language === 'pt' ? 'INFORMAÇÃO DE USUÁRIO' : usuario.Language === 'id' ? 'INFO PENGGUNA' : usuario.Language === 'rs' ? 'ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ' : usuario.Language}\`
 ┊┃ ┗━━━━━━━━━━━━━━•
 ┊┃ ┏━━━━━━━━━━━━━━•
-┊┃ ┃❐ ᴜsᴜᴀʀɪᴏs: @${sender.split("@")[0]} 
+┊┃ ┃❐ ${lenguaje.menu.text5} @${sender.split("@")[0]} 
 ┊┃ ┃${lenguaje.menu.text8} ${user.limit}
 ┊┃ ┃${lenguaje.menu.text9} ${user.level}
 ┊┃ ┃${lenguaje.menu.text10} ${user.role}
@@ -38,7 +39,7 @@ let submenu = `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩
 ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩ 
 
 ${pickRandom([`\`𝐐𝐮𝐢𝐞𝐫𝐞𝐬 𝐨𝐛𝐭𝐞𝐧𝐞𝐫 𝐭𝐮 𝐛𝐨𝐭 𝐩𝐞𝐫𝐬𝐨𝐧𝐚𝐥𝐢𝐳𝐚𝐝𝐨?\`
-https://www.facebook.com/elrebelde21`, `\`□ CÓMO INSTALAR EL BOT\`\n${yt}`, `\`¿Qué hay de nuevo?\`\n• Pon : ${prefix}nuevo`, `\`💫 INFÓRMATE SOBRE LAS NUEVAS ACTUALIZACIONES, NOVEDADES DEL BOT AQUÍ\`\n${nna}`, `\`🌟¿Te agrada el bot? califica nuestro repo con una estrellita ☺\`\n${md}\``])}\n\n`
+https://www.facebook.com/elrebelde21`, `\`□ CÓMO INSTALAR EL BOT\`\n${yt}`, `\`¿Qué hay de nuevo?\`\n• Pon : ${prefix}nuevo`, `\`💫 INFÓRMATE SOBRE LAS NUEVAS ACTUALIZACIONES, NOVEDADES DEL BOT AQUÍ\`\n${nna}`, `\`🌟¿Te agrada el bot? califica nuestro repo con una estrellita ☺\`\n${md}`, `Activar tu bot 24/7 con nuestro hosting\n${host}`])}\n\n`
 let descargar = `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩
 ┊┏━━━━━━━━━━━━━━•
 ┊┃ *🚀 ＭＥＮＵ ＤＥＳＣＡＲＧＡＳ 🚀*
@@ -489,6 +490,10 @@ https://www.facebook.com/elrebelde21`, `\`□ CÓMO INSTALAR EL BOT\`\n${yt}`, `
 ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩`
 conn.sendMessage(m.chat, { text: menu,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender, numBot],  
@@ -507,6 +512,10 @@ if (command == 'menu1' || command == 'descarga') {
 m.react('🚀') 
 conn.sendMessage(m.chat, { text: submenu + descargar,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -529,6 +538,10 @@ if (command == 'menu3' || command == 'menugrupos') {
 m.react('🔰') 
 conn.sendMessage(m.chat, { text: submenu + grupos,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -546,6 +559,10 @@ if (command == 'menu4' || command == 'menubuscadores') {
 m.react('🪄') 
 conn.sendMessage(m.chat, { text: submenu + buscadores,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -563,6 +580,10 @@ if (command == 'menu5' || command == 'menujuegos') {
 m.react('👾') 
 conn.sendMessage(m.chat, { text: submenu + juegos,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -580,6 +601,10 @@ if (command == 'menu6' || command == 'menuefecto') {
 m.react('🎤') 
 conn.sendMessage(m.chat, { text: submenu + efecto,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -597,6 +622,10 @@ if (command == 'menu7' || command == 'menuconvertidores') {
 m.react('🧧') 
 conn.sendMessage(m.chat, { text: submenu + convertidores,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -614,6 +643,10 @@ if (command == 'menu18' || command == 'Menuhony') {
 m.react('🥵') 
 conn.sendMessage(m.chat, { text: submenu + menu18,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -631,6 +664,10 @@ if (command == 'menurandow' || command == 'menu8') {
 m.react('⛩️') 
 conn.sendMessage(m.chat, { text: submenu + menurandow,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -648,6 +685,10 @@ if (command == 'menuRPG' || command == 'menu9') {
 m.react('⚒️') 
 conn.sendMessage(m.chat, { text: submenu + menuRPG,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -665,6 +706,10 @@ if (command == 'menuSticker' || command == 'menu10') {
 m.react('🎈') 
 conn.sendMessage(m.chat, { text: submenu + menuSticker,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -682,6 +727,10 @@ if (command == 'menuOwner' || command == 'menu11') {
 m.react('👑') 
 conn.sendMessage(m.chat, { text: submenu + menuOwner,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
 isForwarded: true,   
 mentionedJid:[sender],  
@@ -744,6 +793,8 @@ ${lenguaje.menu.text12}
 ├❥ᰰຼ ❏ ${prefix}cuenta 
 ├❥ᰰຼ ❏ ${prefix}cuentaoficiales
 ├❥ᰰຼ ❏ ${prefix}status 
+├❥ᰰຼ ❏ ${prefix}infohost
+├❥ᰰຼ ❏ ${prefix}host
 ├❥ᰰຼ ❏ ${prefix}cafirexos
 ├❥ᰰຼ ❏ ${prefix}report _(reporta errores)_
 ╰┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭࣭࣭۫┄̸࣭۫┄̸࣭࣭࣭࣭࣭ٜ۫┄̸࣭࣭࣭࣭࣭ٜ۫┄࣭۫
@@ -1107,10 +1158,10 @@ sourceUrl: `${pickRandom([nna, nn, md, yt])}`
 }
 
 if (command == 'nuevo' || command == 'extreno') {
-conn.sendMessage(m.chat, { text: lenguaje.menu.text15(vs), contextInfo:{mentions: [sender], forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": ` ${wm}`, "body": ` ${vs}`, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: `${pickRandom([nna, nn, md, yt])}`}}}, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
+conn.sendMessage(m.chat, { text: lenguaje.menu.text15(vs), contextInfo:{forwardedNewsletterMessageInfo: { newsletterJid: '120363160031023229@newsletter', serverMessageId: '', newsletterName: 'INFINITY-WA 💫' }, mentions: [sender], forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": ` ${wm}`, "body": ` ${vs}`, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: `${pickRandom([nna, nn, md, yt])}`}}}, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}
 
 if (command == 'reglas') {
-conn.sendMessage(m.chat, { text: lenguaje.menu.text16, contextInfo:{mentions: [sender], forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": ` ${wm}`, "body": ` ${vs}`, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: `${pickRandom([nna, nn, md, yt])}`}}}, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}}
+conn.sendMessage(m.chat, { text: lenguaje.menu.text16, contextInfo:{forwardedNewsletterMessageInfo: { newsletterJid: '120363160031023229@newsletter', serverMessageId: '', newsletterName: 'INFINITY-WA 💫' }, mentions: [sender], forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": ` ${wm}`, "body": ` ${vs}`, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: `${pickRandom([nna, nn, md, yt])}`}}}, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})}}
 
 module.exports = { menu }
 

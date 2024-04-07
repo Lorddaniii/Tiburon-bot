@@ -10,16 +10,27 @@ async function stickers(m, command, conn, mime, quoted, args, text, lolkeysapi, 
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].limit < 1) return m.reply(info.endLimit)
 if (global.db.data.users[m.sender].banned) return m.reply(`_🚫ESTA BANEADO POR MI PROPIETARIO_`) 
+let usuario = global.db.data.users[m.sender]
 if (command == 's' || command == 'sticker') {
 if (/image/.test(mime)) {  
 conn.fakeReply(m.chat, `${lenguaje.sticker.text}`, '0@s.whatsapp.net', 'No haga spam')
 media = await quoted.download()  
-let encmedia = await conn.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author, contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, mediaType: 2, sourceUrl: nn6, thumbnail: imagen1}}})
+let encmedia = await conn.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author, contextInfo: {forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
+forwardingScore: 9999999,  
+isForwarded: true, externalAdReply:{ showAdAttribution: false, title: botname, mediaType: 2, sourceUrl: nn6, thumbnail: imagen1}}})
 await fs.unlinkSync(encmedia)  
 } else if (/video/.test(mime)) {  
 if ((quoted.msg || quoted).seconds > 20) return m. reply(lenguaje.sticker.text1)  
 media = await quoted.download()  
-let encmedia = await conn.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author, contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, mediaType: 2, sourceUrl: nn6, thumbnail: imagen1}}})
+let encmedia = await conn.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author, contextInfo: { forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
+forwardingScore: 9999999,  
+isForwarded: true, externalAdReply:{ showAdAttribution: false, title: botname, mediaType: 2, sourceUrl: nn6, thumbnail: imagen1}}})
 await new Promise((resolve) => setTimeout(resolve, 2000));
 await fs.unlinkSync(encmedia)  
 } else {  
@@ -63,12 +74,12 @@ if (args.length >= 1) {
 text = args.slice(0).join(" ");
 } else if (m.quoted && m.quoted.text) {
 text = m.quoted.text;
-} else return m.reply(`*⚠️ Y el texto?, Agregue un texto!*`) 
-if (!text) return m.reply(`*⚠️ Y el texto?, agregue un texto!*`)
+} else return m.reply(`${usuario.Language === 'es' ? '*⚠️ Y el texto?, Agregue un texto!*' : usuario.Language === 'en' ? '*⚠️ And the text?, Add a text!*' : usuario.Language === 'ar' ? '*⚠️والنص؟، أضف نص!*' : usuario.Language === 'pt' ? '*⚠️ E o texto?, Adicione um texto!*' : usuario.Language === 'id' ? '*⚠️ Dan teksnya?, Tambahkan teks!*' : usuario.Language === 'rs' ? '*⚠️ А текст?, добавь текст!*' : usuario.Language}`) 
+if (!text) return m.reply(`${usuario.Language === 'es' ? '*⚠️ Y el texto?, Agregue un texto!*' : usuario.Language === 'en' ? '*⚠️ And the text?, Add a text!*' : usuario.Language === 'ar' ? '*⚠️والنص؟، أضف نص!*' : usuario.Language === 'pt' ? '*⚠️ E o texto?, Adicione um texto!*' : usuario.Language === 'id' ? '*⚠️ Dan teksnya?, Tambahkan teks!*' : usuario.Language === 'rs' ? '*⚠️ А текст?, добавь текст!*' : usuario.Language}`) 
 const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; 
 const mentionRegex = new RegExp(`@${who.split('@')[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*`, 'g');
 const mishi = text.replace(mentionRegex, '');
-if (mishi.length > 35) return m.reply('*⚠️ El texto no puede tener mas de 35 caracteres*');
+if (mishi.length > 35) return m.reply(`⚠️ ${usuario.Language === 'es' ? '*El texto no puede tener mas de 35 caracteres*' : usuario.Language === 'en' ? '*Text cannot be more than 35 characters*' : usuario.Language === 'ar' ? '*لا يمكن أن يزيد النص عن 35 حرفًا*' : usuario.Language === 'pt' ? '*O texto não pode ter mais de 35 caracteres*' : usuario.Language === 'id' ? '*Teks ​​tidak boleh lebih dari 35 karakter*' : usuario.Language === 'rs' ? '*Текст не может быть более 35 символов*' : usuario.Language}`);
 const pp = await conn.profilePictureUrl(who).catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
 const nombre = m.pushName || "Sin nombre" 
 const obj = {"type": "quote", "format": "png", "backgroundColor": "#000000", "width": 512, "height": 768, "scale": 2, "messages": [{"entities": [], "avatar": true, "from": {"id": 1, "name": `${who?.name || nombre}`, "photo": {url: `${pp}`}}, "text": mishi, "replyMessage": {}}]};

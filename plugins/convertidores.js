@@ -5,6 +5,7 @@ const chalk = require("chalk");
 const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('../libs/fuctions')
 const { TelegraPh, UploadFileUgu, webp2mp4File, floNime } = require('../libs/uploader.js')
 const { toAudio, toPTT, toVideo } = require('../libs/converter.js') 
+let usuario = global.db.data.users[m.sender]
 
 async function efec(conn, command, mime, quoted, exec, prefix, m, from) {
 try {  
@@ -41,7 +42,12 @@ console.log(e)}}
 async function efect2(m, text, prefix, command, conn) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
-if (!text) return m.reply(`\`🪄 𝐋𝐈𝐒𝐓𝐀𝐒 𝐃𝐄 𝐋𝐎𝐆𝐎𝐒\`
+if (!text) return m.reply(`\`🪄 ${usuario.Language === 'es' ? '𝐋𝐈𝐒𝐓𝐀𝐒 𝐃𝐄 𝐋𝐎𝐆𝐎𝐒' : 
+usuario.Language === 'en' ? 'LOGO LISTS' :  
+usuario.Language === 'ar' ? ' قوائم الشعار' : 
+usuario.Language === 'pt' ? 'LISTAS DE LOGOTIPO' : 
+usuario.Language === 'id' ? 'DAFTAR LOGO' : 
+usuario.Language === 'rs' ? 'СПИСКИ ЛОГОТИПОВ' : usuario.Language}\`
 
 * ${prefix}logololi
 * ${prefix}neon
@@ -71,10 +77,20 @@ if (!text) return m.reply(`\`🪄 𝐋𝐈𝐒𝐓𝐀𝐒 𝐃𝐄 𝐋𝐎𝐆
 
 ────────────────────────
 
-𝐔𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐞 𝐥𝐚 𝐬𝐢𝐠𝐮𝐢𝐞𝐧𝐭𝐞 𝐦𝐚𝐧𝐞𝐫𝐚 𝐞𝐣𝐞𝐦𝐩𝐥𝐨 :
+${usuario.Language === 'es' ? '𝐔𝐬𝐚𝐫 𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐝𝐞 𝐥𝐚 𝐬𝐢𝐠𝐮𝐢𝐞𝐧𝐭𝐞 𝐦𝐚𝐧𝐞𝐫𝐚 𝐞𝐣𝐞𝐦𝐩𝐥𝐨 :' : 
+usuario.Language === 'en' ? 'Use the command as follows example:' :  
+usuario.Language === 'ar' ? ' استخدم الأمر على النحو التالي المثال:' : 
+usuario.Language === 'pt' ? 'Use o comando conforme exemplo a seguir:' : 
+usuario.Language === 'id' ? 'Gunakan perintah seperti contoh berikut:' : 
+usuario.Language === 'rs' ? 'Используйте команду следующим образом:' : usuario.Language}
 ${prefix}neon NovaBot
 
-𝐄𝐧 𝐜𝐚𝐬𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐝𝐢𝐠𝐚 𝐟𝐚𝐥𝐭𝐚 𝐭𝐞𝐱𝐭𝐨 𝐮𝐬𝐚𝐫 𝐝𝐞 𝐞𝐬𝐭𝐚 𝐟𝐨𝐫𝐦𝐚, 𝐄𝐣𝐞𝐦𝐩𝐥𝐨 :
+${usuario.Language === 'es' ? '𝐄𝐧 𝐜𝐚𝐬𝐨 𝐝𝐞 𝐪𝐮𝐞 𝐝𝐢𝐠𝐚 𝐟𝐚𝐥𝐭𝐚 𝐭𝐞𝐱𝐭𝐨 𝐮𝐬𝐚𝐫 𝐝𝐞 𝐞𝐬𝐭𝐚 𝐟𝐨𝐫𝐦𝐚, 𝐄𝐣𝐞𝐦𝐩𝐥𝐨 :' : 
+usuario.Language === 'en' ? 'If it says text is missing, use this way, example:' : 
+usuario.Language === 'ar' ? ' إذا كانت الرسالة تقول أن النص مفقود، فاستخدم هذه الطريقة، على سبيل المثال:' : 
+usuario.Language === 'pt' ? 'Se estiver faltando texto, use este método, exemplo:' : 
+usuario.Language === 'id' ? 'Jika tertulis teks hilang, gunakan cara ini, contoh:' : 
+usuario.Language === 'rs' ? 'Если он говорит, что текст отсутствует, используйте этот способ, например:' : usuario.Language}
 ${prefix}marvel texto1|texto2`) 
 
 let [a, e] = text.split `+`   
@@ -106,7 +122,12 @@ if (/ninja/.test(command)) link = global.API('fgmods', '/api/textpro/ninja', { t
 if (/future/.test(command)) link = global.API('fgmods', '/api/textpro/futuristic', { text }, 'apikey')
 if (/3dbox/.test(command)) link = global.API('fgmods', '/api/textpro/3dboxtext', { text }, 'apikey')
 if (/graffiti2/.test(command)) link = global.API('fgmods', '/api/textpro/graffiti2', { text: a, text2: e}, 'apikey')
-conn.sendFile(m.chat, link, 'logo.png', `🪄 𝐓𝐎𝐌𝐀 𝐓𝐔 𝐋𝐎𝐆𝐎 𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋𝐈𝐙𝐀𝐃𝐎!!\n\n❀ 𝐄𝐅𝐄𝐂𝐓𝐎: ${command}`, m)
+conn.sendFile(m.chat, link, 'logo.png', `🪄 ${usuario.Language === 'es' ? '𝐓𝐎𝐌𝐀 𝐓𝐔 𝐋𝐎𝐆𝐎 𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋𝐈𝐙𝐀𝐃𝐎!!\n\n❀ 𝐄𝐅𝐄𝐂𝐓𝐎' : 
+usuario.Language === 'en' ? 'TAKE YOUR PERSONALIZED LOGO\n\n❀ EFFECT' :  
+usuario.Language === 'ar' ? ' احصل على تأثير شعارك المخصص\n\n❀' : 
+usuario.Language === 'pt' ? 'TOME SEU EFEITO LOGOTIPO PERSONALIZADO\n\n❀' : 
+usuario.Language === 'id' ? 'AMBIL EFEK LOGO PRIBADI ANDA\n\n❀' : 
+usuario.Language === 'rs' ? 'СОЗДАЙТЕ СВОЙ ПЕРСОНАЛИЗИРОВАННЫЙ ЛОГОТИП\n\n❀ ЭФФЕКТ' : usuario.Language}: ${command}`, m)
 m.react('🪄')
 } catch (e) {  
 m.reply(`${info.error} ${e}`)
@@ -162,7 +183,12 @@ throw m.reply(info.error)}
 m.reply(lenguaje.sms.text7)}}
 
 if (command == 'txt') {
-if (!text) return m.reply(`⚠️ Y el texto?, Que quieres te escribar?`) 
+if (!text) return m.reply(`⚠️ ${usuario.Language === 'es' ? 'Y el texto?, Que quieres te escribar?' : 
+usuario.Language === 'en' ? 'And the text? What do you want to write?' : 
+usuario.Language === 'ar' ? ' والنص ماذا تريد أن تكتب؟' : 
+usuario.Language === 'pt' ? 'E o texto? O que você quer escrever?' : 
+usuario.Language === 'id' ? 'Dan teksnya? Apa yang ingin kamu tulis?' : 
+usuario.Language === 'rs' ? 'А текст?Что вы хотите написать?' : usuario.Language}`) 
 m.react('📝')
 let img = global.API('fgmods', '/api/maker/txt', { text: text }, 'apikey')
 conn.sendFile(m.chat, img, 'img.png', `✍🏻 ${lenguaje['exito']()}`, m)}}

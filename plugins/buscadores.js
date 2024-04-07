@@ -12,6 +12,7 @@ const {googleImage, pinterest} = require('@bochilteam/scraper')
 const Jimp = require('jimp')
 const FormData = require("form-data") 
 const os = require('os')
+let user = global.db.data.users[m.sender]
 
 async function buscadores(m, command, conn, text, budy, from, fkontak, prefix, args, q, quoted, lang, lolkeysapi) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
@@ -52,14 +53,14 @@ let teks = `💫  ${lenguaje['result']()} ${text}\n\n`
 for (let g of res) {
 teks += `🔶 ${lenguaje.lengua.titulo} ${g.title}\n`
 teks += `🔶 ${lenguaje.lengua.desc} ${g.snippet}\n`
-teks += `🔶 *LINK* : ${g.link}\n\n✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧\n\n`
+teks += `🔶 *${user.Language === 'es' ? 'ENLACE' : user.Language === 'en' ? 'LINK' : user.Language === 'ar' ? ' وصلة' : user.Language === 'pt' ? 'LINK' : user.Language === 'id' ? 'TAUTAN' : user.Language === 'rs' ? 'СВЯЗЬ' : user.Language} :* ${g.link}\n\n✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧⋄⋆⋅⋆⋄✧\n\n`
 } 
 m.reply(teks)})
 }
 
 if (command == 'imagen') {
 const {googleImage} = require('@bochilteam/scraper') 
-if (budy.includes('gore') || budy.includes('cp')|| budy.includes('porno')|| budy.includes('Gore')|| budy.includes('rule')|| budy.includes('CP')|| budy.includes('Rule34')) return m.reply('😐 NO PIDA BOLUDECES');
+if (budy.includes('gore') || budy.includes('cp')|| budy.includes('porno')|| budy.includes('Gore')|| budy.includes('rule')|| budy.includes('CP')|| budy.includes('Rule34')) return m.reply(`😐 ${user.Language === 'es' ? 'NO PIDA BOLUDECES' :  user.Language === 'en' ? 'I"M NOT GOING TO SEND THAT, DON"T ASK FOR BULLSHIT' : user.Language === 'ar' ? ' لن أرسل ذلك، لا تسأل عن الهراء' : user.Language === 'pt' ? 'NÃO VOU ENVIAR ISSO, NÃO PEÇA BULLSHIT' : user.Language === 'id' ? 'AKU TIDAK AKAN MENGIRIMKAN ITU, JANGAN MINTA BULLSHIT' : user.Language === 'rs' ? 'Я НЕ БУДУ ЭТО ОТПРАВЛЯТЬ, НЕ ПРОШИТЕ ерунду' : user.Language}`) 
 if (!text) return m.reply(`${lenguaje.lengua.ejemplo}\n${prefix + command} gatito`)
 try {  
 image = await fetchJson(`https://api.akuari.my.id/search/googleimage?query=${text}`)
@@ -270,7 +271,8 @@ const moment = require('moment-timezone')
   const tzBR = moment().tz('America/Sao_Paulo').format('DD/MM HH:mm');
   const tzAS = moment().tz('Asia/Jakarta').format('DD/MM HH:mm');
   const tzAF = moment().tz('Africa/Malabo').format('DD/MM HH:mm');
-  await conn.sendMessage(m.chat, {text: `┏╼┅┅⪻ \`\`\`ZONA-HORARIA 🗺️\`\`\` ⪼┅┅┅┓
+  await conn.sendMessage(m.chat, {text: `
+  ┏╼┅┅⪻ \`\`\`${user.Language === 'es' ? 'ZONA-HORARIA' : user.Language === 'en' ? 'TIME ZONE' : user.Language === 'ar' ? ' وحدة زمنية' : user.Language === 'pt' ? 'FUSO HORÁRIO' : user.Language === 'id' ? 'ZONA WAKTU' : user.Language === 'rs' ? 'ЧАСОВОЙ ПОЯС' : user.Language} 🗺️\`\`\` ⪼┅┅┅┓
 ┋• Perú       : ${tzPE}
 ┋• México     : ${tzMX}
 ┋• Bolivia    : ${tzBO}
@@ -292,7 +294,7 @@ const moment = require('moment-timezone')
 ┋• Asia       : ${tzAS}
 ┋• África     : ${tzAF}
 ┋┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅
-┋${String.fromCharCode(8206).repeat(850)} 💻 *ᴢᴏɴᴀ ʜᴏʀᴀʀɪᴀ ᴅᴇʟ sᴇʀᴠɪᴅᴏʀ ᴀᴄᴛᴜᴀʟ:*
+┋${String.fromCharCode(8206).repeat(850)} 💻 ${user.Language === 'es' ? '*ᴢᴏɴᴀ ʜᴏʀᴀʀɪᴀ ᴅᴇʟ sᴇʀᴠɪᴅᴏʀ ᴀᴄᴛᴜᴀʟ:*' : user.Language === 'en' ? '*Current server time zone:*' : user.Language === 'ar' ? '*المنطقة الزمنية الحالية للخادم:*' : user.Language === 'pt' ? '*Fuso horário atual do servidor:*' : user.Language === 'id' ? '*Zona waktu server saat ini:*' : user.Language === 'rs' ? '*Текущий часовой пояс сервера:*' : user.Language}
 ┋ *[ ${Intl.DateTimeFormat().resolvedOptions().timeZone} ]*
 ┋ *${moment().tz(Intl.DateTimeFormat().resolvedOptions().timeZone).format('DD/MM/YY HH:mm:ss')}*
 ┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┉┛`}, {quoted: m})
