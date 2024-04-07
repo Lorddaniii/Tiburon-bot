@@ -10,7 +10,6 @@ const baileys = require('@whiskeysockets/baileys')
  const fs = require("fs")
  const ws = require('ws')
 const { smsg, getGroupAdmins, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, delay, format, logic, generateProfilePicture, parseMention, getRandom } = require('../libs/fuctions.js')
-let usuario = global.db.data.users[m.sender]
 let panel = "https://www.cafirexos.com"
 let panel2 = "https://host.panel-infinitywa.store"
 let cafi = "https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q"
@@ -19,6 +18,7 @@ let cafi2 = "https://chat.whatsapp.com/FBtyc8Q5w2iJXVl5zGJdFJ"
 async function info(command, conn, m, speed, sender, fkontak, pickRandom, pushname, from, msg, text) {
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 if (global.db.data.users[m.sender].banned) return
+let usuario = global.db.data.users[m.sender]
 if (command == 'estado' || command == 'infobot') {
 const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024))
 const freeMemory = Math.round(os.freemem() / (1024 * 1024 * 1024))
