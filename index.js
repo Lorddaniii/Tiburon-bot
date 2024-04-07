@@ -333,8 +333,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 //let text = ``
 sock.sendMessage(res.id, {text: lenguaje['smsAvisos2'](),  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,   
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -357,8 +361,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 sock.sendMessage(res.id, {   
 text: lenguaje['smsAvisos4'](),  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,    
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -379,9 +387,13 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //let text = `「 𝐀𝐉𝐔𝐒𝐓𝐄𝐒 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」\n\n*ᴬʰᵒʳᵃ ˢᵒˡᵒ ˡᵒˢ ᵃᵈᵐᶦⁿˢ ᵖᵘᵉᵈᵉ ᵉᵈᶦᵗᵃʳ ˡᵒˢ ᵃʲᵘˢᵗᵉ ᵈᵉˡ ᵍʳᵘᵖᵒ*`
 sock.sendMessage(res.id, {text: lenguaje['smsAvisos6'](),
-contextInfo:{  
+contextInfo:{ 
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,   
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -404,8 +416,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 //let text = `「 𝐀𝐉𝐔𝐒𝐓𝐄𝐒 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」\n\n*ᴬʰᵒʳᵃ ᵗᵒᵈᵒˢ ˡᵒˢ ᵖᵃʳᵗᶦᶜᶦᵖᵃʳᵗᵉ ᵖᵘᵉᵈᵉ ᵉᵈᶦᵗᵃʳ ˡᵒˢ ᵃʲᵘˢᵗᵉ ᵈᵉˡ ᵍʳᵘᵖᵒ*`
 sock.sendMessage(res.id, {text: lenguaje['smsAvisos7'](),  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,   
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -428,8 +444,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 let text = `${lenguaje['smsAvisos8']()}\n${res.desc}`
 sock.sendMessage(res.id, {text: text,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,   
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -452,8 +472,12 @@ ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 let text = `${lenguaje['smsAvisos9']()}\n${res.subject}`
 sock.sendMessage(res.id, {text: text,  
 contextInfo:{  
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,  
-isForwarded: false,   
+isForwarded: true,   
 mentionedJid:[m.sender],  
 "externalAdReply": {  
 "showAdAttribution": true,  
@@ -505,7 +529,10 @@ if (media === 'texto')
 sock.sendMessage(anu.id, { text: welcome, mentions: [num]}, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 if (media === 'audio')
 sock.sendMessage(anu.id, { audio: { url: vn }, 
-contextInfo: { mentionedJid:[num], "externalAdReply": { 
+contextInfo: { forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, forwardingScore: 9999999, isForwarded: true, mentionedJid:[num], "externalAdReply": { 
 "title": `乂 ＷＥＬＣＯＭＥ 乂`, 
 "body": `${name.split("@")[0]}`, 
 "previewType": "PHOTO", 
@@ -516,8 +543,12 @@ contextInfo: { mentionedJid:[num], "externalAdReply": {
 seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, {quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 if (media === 'texto2')
 sock.sendMessage(anu.id, { text: `${lenguaje['smsWel7']()} ${lenguaje['smsWel']()} @${name.split("@")[0]} ${lenguaje['smsWel2']()}\n${lenguaje['smsWel8']()} ${metadata.subject}\n${lenguaje['smsWel9']()} ${miembros}\n${lenguaje['smsWel10']()} ${date}\n\n${lenguaje['smsWel11']()} \n\n${metadata.desc}`, contextInfo:{
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,
-isForwarded: false, 
+isForwarded: true, 
 mentionedJid:[num],
 "externalAdReply": {"showAdAttribution": true,
 "containsAutoReply": true,
@@ -542,8 +573,12 @@ sock.sendMessage(anu.id, { text: bye, mentions: [num]}, {quoted: null, ephemeral
 if (media === 'texto2')
 sock.sendMessage(anu.id, { text: `\`\`\`[!] C fue alv : @${name.split("@")[0]} 😹\`\`\``,
 contextInfo:{
+forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
 forwardingScore: 9999999,
-isForwarded: false, 
+isForwarded: true,  
 mentionedJid:[num],
 "externalAdReply": {"showAdAttribution": true,
 "containsAutoReply": true,
@@ -564,6 +599,12 @@ let name = num
 let usuario = anu.author
 sock.sendMessage(anu.id, { text: `${pickRandom(['[ NUEVO ADMINS ]\n\n', 'Hey'])} @${name.split("@")[0]} ${pickRandom(['Ahora eres admin del grupo 🥳', 'Felicidades ahora eres parte staff 🎉'])}\n\n🫵 Acción echa por : @${usuario.split("@")[0]}`, mentions: [...groupAdmins.map(v => v.id)], 
  contextInfo:{
+ forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
+forwardingScore: 9999999,
+isForwarded: true, 
  mentionedJid: [num, usuario],
  "externalAdReply": {"showAdAttribution": true,
  "containsAutoReply": true,
@@ -579,6 +620,12 @@ let name = num
 let usuario = anu.author
 sock.sendMessage(anu.id, { text: `@${name.split("@")[0]} ${pickRandom(['Joderte ya no eres admin 🥲', 'jjjjj ya no eres admin culiado 🤣'])}\n\n🫵 Acción echa por : @${usuario.split("@")[0]}`,
  contextInfo:{
+ forwardedNewsletterMessageInfo: { 
+newsletterJid: '120363160031023229@newsletter', 
+serverMessageId: '', 
+newsletterName: 'INFINITY-WA 💫' }, 
+forwardingScore: 9999999,
+isForwarded: true, 
  mentionedJid:[num, usuario],
  "externalAdReply": {"showAdAttribution": true,
  "containsAutoReply": true,
