@@ -37,7 +37,7 @@ const {jadibot, listJadibot, killJadibot} = require('./plugins/serbot.js')
 const {menu} = require('./plugins/menu.js') 
 const {info} = require('./plugins/info.js')
 const {reg, rpg} = require('./plugins/rpg.js') 
-const {game, game2, game3} = require('./plugins/juegos.js')   
+const {game, game2, game3} = require('./plugins/juegos.js')
 const {buscadores} = require('./plugins/buscadores.js')
 const {efec, efect2, convertidores} = require('./plugins/convertidores.js')  
 const {grupo} = require('./plugins/grupos.js')
@@ -117,6 +117,9 @@ const isPremium = m.isGroup ? premium.includes(userSender) : false
 const who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
 const thumb = fs.readFileSync("./media/menu2.jpg")
 const fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${userSender.split('@')[0]}:${userSender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+
+const fake = { contextInfo: { forwardedNewsletterMessageInfo: { newsletterJid: '120363160031023229@newsletter', serverMessageId: '', newsletterName: 'INFINITY-WA 💫' }, mentionedJid: null, forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": wm, "body": vs, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: md}}}
+
 const ftroli ={key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "status@broadcast"}, "message": {orderMessage: {itemCount: 2022,status: 200, thumbnail: thumb, surface: 200, message: "ɴᴏᴠᴀʙᴏᴛ-ᴍᴅ", orderTitle: "sᴜᴘᴇʀ ʙᴏᴛ ᴅᴇ ᴡʜᴀᴛsᴀᴘᴘ", sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
 const fdoc = {key : {participant : '0@s.whatsapp.net', ...(from ? { remoteJid: `status@broadcast` } : {}) },message: {documentMessage: {title: botname, jpegThumbnail: null}}}
 const kick = function (from, orangnya) {   
@@ -144,12 +147,14 @@ const isQuotedMsg = type === 'extendedTextMessage' && content.includes('Message'
 const isViewOnce = (type === 'viewOnceMessage') // Verifica si el tipo de mensaje es (mensaje de vista única)  
    
 // Responder cmd con medios
-if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in global.db.data.sticker)) {
+ if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in global.db.data.sticker)) {
 let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
 let { text, mentionedJid } = hash
-let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {userJid: conn.user.id, quoted: m.quoted && m.quoted.fakeObj })
+let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
+userJid: conn.user.id,
+quoted: m.quoted && m.quoted.fakeObj })
 messages.key.fromMe = areJidsSameUser(m.sender, conn.user.id)
-messages.key.id = m.key.id 
+messages.key.id = m.key.id
 messages.pushName = m.pushName
 if (m.isGroup) messages.participant = m.sender
 let msg = {...chatUpdate, messages: [proto.WebMessageInfo.fromObject(messages)], type: 'append' }
@@ -167,7 +172,7 @@ chalk.bold.white(`\n│💬${lenguaje.consola.text6}`) + chalk.whiteBright(`\n�
 )}          
 
 //--------------------[ AUTOBIO ]----------------------- 
-/*if (global.db.data.settings[numBot].autobio) {
+/*if (global.db.data.settings[numBot].autobio) { 
 let setting = global.db.data.settings[numBot]
 if (new Date() * 1 - setting.status > 1000) {
 let uptime = await runtime(process.uptime())
@@ -203,6 +208,22 @@ for (let prefix of forbidPrefixes) {
 if (m.sender.startsWith(prefix)) {
 m.reply(`${lenguaje['smsAntiArabe']()}`, m.sender)
 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')}}} 
+
+//--------------------[ viewOnceMessage ]-----------------------
+if (m.mtype == 'viewOnceMessageV2') { 
+//if (global.db.data.chats[m.chat].viewonce) return
+teks = `\`𝙰𝚀𝚄𝙸 𝙽𝙾 𝚂𝙴 𝙿𝙴𝚁𝙼𝙸𝚃𝙴 𝙾𝙲𝚄𝙻𝚃𝙰𝚁 𝙽𝙰𝙳𝙰\``
+let msg = m.message.viewOnceMessageV2.message
+let type = Object.keys(msg)[0]
+let media = await downloadContentFromMessage(msg[type], type == 'imageMessage' ? 'image' : 'video')
+let buffer = Buffer.from([])
+for await (const chunk of media) {
+buffer = Buffer.concat([buffer, chunk])}
+if (/video/.test(type)) {
+return conn.sendFile(m.chat, buffer, 'error.mp4', `${msg[type].caption} ${teks}`, m)
+} else if (/image/.test(type)) {
+return conn.sendFile(m.chat, buffer, 'error.jpg', `${msg[type].caption} ${teks}`, m)
+}}
 
 //--------------------[ ANTILINK ]-----------------------
 if (global.db.data.chats[m.chat].AntiYoutube && !isCreator) {
@@ -416,14 +437,14 @@ global.lenguaje = es
 }             
  
 //---------------------[ ANTISPAM ]------------------------
-if (global.db.data.chats[m.chat].antispam && prefix) {
+/*if (global.db.data.chats[m.chat].antispam && prefix) {
 let user = global.db.data.users[m.sender]
 let str = [nna, md, yt, tiktok, fb] 
 let info = str[Math.floor(Math.random() * str.length)]
 const date = global.db.data.users[m.sender].spam + 3000; //600000 
 if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ] ➢ ${command} [${args.length}]`)  
 global.db.data.users[m.sender].spam = new Date * 1;
-}
+}*/
 
 //---------------------[ TicTacToe ]------------------------
 let winScore = 4999
@@ -579,7 +600,7 @@ case 'estado': case 'infobot': case 'owner': case 'creador': case 'contacto': ca
 break      
      
 //activar/desactivar  
-case 'welcome': case 'bienvenida': case 'antilink': case 'antienlace': case 'antifake': case 'antiFake': case 'antiarabe': case 'antiArabe': case 'autodetect': case 'detect': case 'audios': case 'autosticker': case 'stickers': case 'modocaliente': case 'antinsfw': case 'modoadmin': case 'modoadmins': case 'soloadmin': case 'antiprivado': case 'antipv': case 'anticall': case 'antillamada': case 'modojadibot': case 'jadibot': case 'autoread': case 'autovisto': case 'antispam': case 'chatbot': case 'simsimi': case 'autolevelup': case 'autonivel': case 'antitoxic': case 'antilink2': case 'AntiTwiter': case 'antitwiter': case 'antitiktok': case 'AntiTikTok': case 'antitelegram': case 'AntiTelegram': case 'antifacebook': case 'AntiFb': case 'AntiFacebook': case 'antinstagram': case 'AntInstagram': case 'antiyoutube': case 'AntiYoutube': case 'AntiIg': case 'enable': case 'configuracion': case 'configurar': enable(m, command, isGroupAdmins, text, command, args, isBotAdmins, isGroupAdmins, isCreator, conn) 
+case 'welcome': case 'bienvenida': case 'antilink': case 'antienlace': case 'antifake': case 'antiFake': case 'antiarabe': case 'antiArabe': case 'autodetect': case 'detect': case 'audios': case 'autosticker': case 'stickers': case 'modocaliente': case 'antinsfw': case 'modoadmin': case 'modoadmins': case 'soloadmin': case 'antiprivado': case 'antipv': case 'anticall': case 'antillamada': case 'modojadibot': case 'jadibot': case 'autoread': case 'autovisto': case 'antispam': case 'chatbot': case 'simsimi': case 'autolevelup': case 'autonivel': case 'antitoxic': case 'antilink2': case 'AntiTwiter': case 'antitwiter': case 'antitiktok': case 'AntiTikTok': case 'antitelegram': case 'AntiTelegram': case 'antifacebook': case 'AntiFb': case 'AntiFacebook': case 'antinstagram': case 'AntInstagram': case 'antiyoutube': case 'AntiYoutube': case 'AntiIg': case 'enable': case 'configuracion': case 'configurar': case 'antiviewonce': enable(m, command, isGroupAdmins, text, command, args, isBotAdmins, isGroupAdmins, isCreator, conn) 
 break
     
 //Grupos    
@@ -594,11 +615,6 @@ break
 case 'slot': case 'apuesta':  case 'fake': case 'ppt': case 'suit': game3(m, command, conn, args, prefix, msToTime, text, body, from, sender, quoted, pushname)
 break    
 
-case 'prue': {
-let user = global.db.data.users[m.sender]
-m.reply(`${user.Language === 'es' ? 'Hola' : user.Language === 'en' ? 'Hello' : user.Language === 'ar' ? 'مرحبا' : user.Language === 'pt' ? 'Olá' : user.Language === 'id' ? 'Jam' : user.Language === 'rs' ? 'Привет' : user.Language}`)} 
-break
-  
 case 'math': case 'matematicas': {
 let user = global.db.data.users[m.sender]
 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`⚠️ ${user.Language === 'es' ? '𝚃𝚘𝚍𝚊𝚟𝚒𝚊 𝚑𝚊𝚢 𝚙𝚛𝚎𝚐𝚞𝚗𝚝𝚊𝚜 𝚜𝚒𝚗 𝚛𝚎𝚜𝚙𝚞𝚎𝚜𝚝𝚊 𝚎𝚗 𝚎𝚜𝚝𝚎 𝚌𝚑𝚊𝚝' : user.Language === 'en' ? 'There is still no unanswered question in this chat' : user.Language === 'ar' ? ' لا يوجد حتى الآن أي سؤال دون إجابة في هذه الدردشة' : user.Language === 'pt' ? ' Ainda não há nenhuma pergunta sem resposta neste chat' : user.Language === 'id' ? ' Masih belum ada pertanyaan yang belum terjawab dalam obrolan ini' : user.Language === 'rs' ? ' В этом чате еще нет вопросов без ответа' : user.Language}`)   
@@ -734,10 +750,10 @@ await conn.sendTextWithMentions(m.chat, confirm, m)
 this.confirm[m.sender.split('@')[0]] = { sender: m.sender, to: who, message: m, type, count, timeout: setTimeout(() => (m.reply(`⚠️ ${user.Language === 'es' ? '*Se acabó el tiempo, no se obtuvo respuesta. Transferencia cancelada.*' : user.Language === 'en' ? '*Time ran out, no response received. Transfer cancelled.*' : user.Language === 'ar' ? '*لقد انتهى الوقت ولم يتم الرد. تم إلغاء النقل.*' : user.Language === 'pt' ? '*O tempo acabou, nenhuma resposta foi recebida. Transferência cancelada.*' : user.Language === 'id' ? '*Waktu habis, tidak ada tanggapan yang diterima. Transfer dibatalkan.*' : user.Language === 'rs' ? '*Время истекло, ответа не получено. Перенос отменен.*' : user.Language}`), delete this.confirm[m.sender.split('@')[0]]), 60 * 1000)}}
 break
       
-//stickers  
+//stickers   
 case 's': case 'sticker': case 'wm': case 'take': case 'attp': case 'dado': case 'qc': stickers(m, command, conn, mime, quoted, args, text, lolkeysapi, fkontak)   
 break
-  
+                                          
 //idiomas 
 case 'idioma': case 'Language': case 'idiomas': { 
 let user = global.db.data.users[m.sender]
@@ -772,10 +788,37 @@ m.reply(lenguaje.idioma2() + idiomas)
 } catch (e) {
 m.reply(lenguaje.AvisoMG() + lenguaje.idioma(prefix))}}
 break  
+ 	    
+case 'grouplist': case 'listgc': {
+let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
+let teks = `💢 *\`LISTA DE GRUPOS\`*\n\n◉ Total: ${anu.length} Grupos\n\n`
+for (let i of anu) {
+let metadata = await conn.groupMetadata(i)
+teks += `• *Grupos:* ${metadata.subject}\n• *Creador :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'indefinido'}\n• *ID :* ${metadata.id}\n• *Creación :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n• *Participantes :* ${metadata.participants.length}\n\n━━━━━━━━━━━━━━━━━━━━━━━\n\n`
+}
+conn.sendTextWithMentions(m.chat, teks, m)}
+break
+             
+case 'style': case 'styletext': {
+let { styletext } = require('./libs/scraper')
+if (!text) return m.reply( '⚠️ ¡Ingrese el texto!') 
+let anu = await styletext(text)
+let teks = `🔰 *${text}*\n\n`
+for (let i of anu) {
+teks += `* ${i.result}\n\n` }
+m.reply(teks)}
+break
 
-case 'prueba': { 
-await conn.sendPoll(m.chat, `Hola ${pushname}\n\n> 𝐒𝐮𝐩𝐞𝐫 𝐁𝐨𝐭 𝐃𝐞 𝐖𝐡𝐚𝐭𝐬𝐀𝐩𝐩 `, ['play3 billie eilish', 'estado', 'menu', 'fb'])}
-break   
+case 'npmsearch':{
+let fetch = require('node-fetch') 
+if (!text) return m.reply(`_Ingresa el nombre del paquete npm_\n_Ejemplo_ : ${prefix}npmsearch whatsapp-web.js`) 
+let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
+let { objects } = await res.json()
+if (!objects.length) throw `Query "${text}" not found :/`
+let txt = objects.map(({ package: pkg }) => {
+return `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_` }).join`\n\n`
+m.reply(txt)}
+break
 
 //propietario/owner
 case 'bcgc': case 'bcgroup': case 'bc': case 'broadcast': case 'bcall': case 'block': case 'bloquear': case 'unblock': case 'desbloquear': case 'setcmd':  case 'addcmd': case 'delcmd': case 'listcmd': case 'añadirdiamantes': case 'dardiamantes': case 'addlimit': case 'añadirxp': case 'addexp': case 'addxp': case 'fetch': case 'get': case 'fotobot': case 'nuevafoto': case 'seppbot': case 'botname': case 'nuevonombre': case 'namebot': case 'banuser': case 'unbanuser': case 'backup': case 'respaldo': case 'copia': owner(isCreator, m, command, conn, text, delay, fkontak, store, quoted, sender, mime, args) 
