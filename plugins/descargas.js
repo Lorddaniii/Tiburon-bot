@@ -355,13 +355,9 @@ imagesSent = false
 return m.reply(`${info.error}\n\n${e}`)}}
 
 if (command == 'lyrics' || command == 'letra') {
+const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
 if (!text) return m.reply(lenguaje.descargar.text11 + `\n${prefix + command} ozuna`)
 m.react('🕔') 
-try {
-let res = await fg.lyrics(text);
-conn.sendFile(m.chat, res.thumb, 'img.png', `${lenguaje.lengua.espere}`, `❏ ${lenguaje.descargar.title} ${res.title}\n❏ ${lenguaje.descargar.autor}  ${res.artist}\n\n❏ ${lenguaje.descargar.letra} ${res.lyrics}`, fkontak);
-m.react(done) 
-} catch {
 try {
 const result = await lyricsv2(text).catch(async _ => await lyrics(text))
 conn.editMessage(m.chat, `${lenguaje.lengua.espere}`, `❏ ${lenguaje.descargar.title} ${result.title}\n❏ ${lenguaje.descargar.autor}  ${result.author}\n*❏ Url :* ${result.link}\n\n❏ ${lenguaje.descargar.letra} ${result.lyrics}`, 3, fkontak)
@@ -371,7 +367,7 @@ m.react(done)
 } catch (e) {
 m.react(error)
 console.log(e) 
-}}}
+}}
 
 if (command == 'mediafire') {
 const { mediafireDl } = require('../libs/mediafire.js') 

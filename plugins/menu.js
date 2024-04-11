@@ -155,6 +155,8 @@ let buscadores = `╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩
 ┊┃ ❏ ${prefix}wikipedia
 ┊┃ ❏ ${prefix}wiki
 ┊┃ ❏ ${prefix}ia2 _(crear imagen con la (IA)_
+┊┃ ❏ ${prefix}npmsearch _(Buscar información de NPM)_
+┊┃ ❏ ${prefix}styletext _(General diseños de letras)_
 ┊┃ ❏ ${prefix}horario
 ┊┗━━━━━━━━━━━━━━•
 ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈⪩`
