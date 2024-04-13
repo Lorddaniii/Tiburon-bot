@@ -43,17 +43,17 @@ const {efec, efect2, convertidores} = require('./plugins/convertidores.js')
 const {grupo} = require('./plugins/grupos.js')
 const {nsfw} = require('./plugins/nsfw.js')  
 const {randow, randow2} = require('./plugins/randow.js') 
-const {descarga, descarga2} = require('./plugins/descargas.js')   
-const {stickers} = require('./plugins/stickers.js') 
-const {owner} = require('./plugins/propietario.js')  
+const {descarga, descarga2} = require('./plugins/descargas.js')    
+const {stickers} = require('./plugins/stickers.js')  
+const {owner} = require('./plugins/propietario.js')   
 const {enable} = require('./plugins/enable.js')
 //global.db.data.sticker = global.db.data.sticker || {} 
-let user = global.db.data.users[m.sender]
-let tebaklagu = global.db.data.game.tebaklagu = []
+let user = global.db.data.users[m.sender] 
+let tebaklagu = global.db.data.game.tebaklagu = [] 
 let kuismath = global.db.data.game.math = []
 let tekateki = global.db.data.game.tekateki = []
-
-const msgs = (message) => {  
+  
+const msgs = (message) => {   
 if (message.length >= 10) { 
 return `${message.substr(0, 500)}` 
 } else {  
@@ -572,13 +572,14 @@ user.afkTime = -1
 user.afkReason = ''  
 }
 
-//ARRANCA LA DIVERSIÓN 
+//ARRANCA LA DIVERSIÓN  
 switch (prefix && command) { 
-case 'yts': case 'ytsearch': case 'acortar': case 'google': case 'imagen': case 'traducir': case 'translate': case "tts": case 'ia': case 'chatgpt': case 'dalle': case 'ia2': case 'aimg': case 'imagine': case 'dall-e': case 'ss': case 'ssweb': case 'wallpaper': case 'hd': case 'horario': case 'bard': case 'wikipedia': case 'wiki': case 'pinterest': await buscadores(m, command, conn, text, budy, from, fkontak, prefix, args, quoted, lolkeysapi)
-break  
+case 'yts': case 'ytsearch': case 'acortar': case 'google': case 'imagen': case 'traducir': case 'translate': case "tts": case 'ia': case 'chatgpt': case 'dalle': case 'ia2': case 'aimg': case 'imagine': case 'dall-e': case 'ss': case 'ssweb': case 'wallpaper': case 'hd': case 'horario': case 'bard': case 'wikipedia': case 'wiki': case 'pinterest': case 'style': case 'styletext': case 'npmsearch': await buscadores(m, command, conn, text, budy, from, fkontak, prefix, args, quoted, lolkeysapi)
+break   
        
-//jadibot/serbot 
+//jadibot/serbot  
 case 'serbot': case 'jadibot': case 'qr':
+if (!global.db.data.chats[m.chat].jadibotmd) return m.reply(`*⚠️ Este comando fue desabilitado por el creador*`)
 jadibot(conn, m, command, text, args, sender)
 break  
 case 'deljadibot': case 'stop': 
@@ -600,15 +601,15 @@ case 'estado': case 'infobot': case 'owner': case 'creador': case 'contacto': ca
 break      
      
 //activar/desactivar  
-case 'welcome': case 'bienvenida': case 'antilink': case 'antienlace': case 'antifake': case 'antiFake': case 'antiarabe': case 'antiArabe': case 'autodetect': case 'detect': case 'audios': case 'autosticker': case 'stickers': case 'modocaliente': case 'antinsfw': case 'modoadmin': case 'modoadmins': case 'soloadmin': case 'antiprivado': case 'antipv': case 'anticall': case 'antillamada': case 'modojadibot': case 'jadibot': case 'autoread': case 'autovisto': case 'antispam': case 'chatbot': case 'simsimi': case 'autolevelup': case 'autonivel': case 'antitoxic': case 'antilink2': case 'AntiTwiter': case 'antitwiter': case 'antitiktok': case 'AntiTikTok': case 'antitelegram': case 'AntiTelegram': case 'antifacebook': case 'AntiFb': case 'AntiFacebook': case 'antinstagram': case 'AntInstagram': case 'antiyoutube': case 'AntiYoutube': case 'AntiIg': case 'enable': case 'configuracion': case 'configurar': case 'antiviewonce': enable(m, command, isGroupAdmins, text, command, args, isBotAdmins, isGroupAdmins, isCreator, conn) 
+case 'welcome': case 'bienvenida': case 'antilink': case 'antienlace': case 'antifake': case 'antiFake': case 'antiarabe': case 'antiArabe': case 'autodetect': case 'detect': case 'audios': case 'autosticker': case 'stickers': case 'modocaliente': case 'antinsfw': case 'modoadmin': case 'modoadmins': case 'soloadmin': case 'antiprivado': case 'antipv': case 'anticall': case 'antillamada': case 'modojadibot': case 'jadibot': case 'autoread': case 'autovisto': case 'antispam': case 'chatbot': case 'simsimi': case 'autolevelup': case 'autonivel': case 'antitoxic': case 'antilink2': case 'AntiTwiter': case 'antitwiter': case 'antitiktok': case 'AntiTikTok': case 'antitelegram': case 'AntiTelegram': case 'antifacebook': case 'AntiFb': case 'AntiFacebook': case 'antinstagram': case 'AntInstagram': case 'antiyoutube': case 'AntiYoutube': case 'AntiIg': case 'enable': case 'configuracion': case 'configurar': case 'antiviewonce': case 'game2': enable(m, command, isGroupAdmins, text, command, args, isBotAdmins, isGroupAdmins, isCreator, conn) 
 break
     
 //Grupos    
-case 'grupo': case 'delete': case 'del': case 'join': case 'unete': case 'hidetag': case 'notificar': case 'tag': case 'setppgroup': case 'setpp': case 'setppname': case 'nuevonombre': case 'newnombre': case 'setdesc': case 'descripción': case 'anularlink': case 'resetlink': case 'revoke': case 'add': case 'agregar': case 'invitar': case 'kick': case 'echar': case 'sacar': case 'promote': case 'darpoder': case 'demote': case 'quitarpoder': case 'link': case 'linkgc': case 'banchat': case 'tagall': case 'invocar': case 'todos': case 'admins': case 'administradores': case 'infogrupo': case 'groupinfo': case 'warn': case 'advertencia': case 'unwarn': case 'quitardvertencia': case 'listwarn': case 'enline': case 'online': case 'listonine': case 'listaenlinea': case 'enlinea': case 'listonline': case 'setrules': case 'addrules': case 'addrule': case 'rules': grupo(m, command, isGroupAdmins, text, conn, participants, isBotAdmins, args, isCreator, delay, sender, quoted, mime, from, isCreator, groupMetadata, fkontak, delay) 
-break    
+case 'grupo': case 'delete': case 'del': case 'join': case 'unete': case 'hidetag': case 'notificar': case 'tag': case 'setppgroup': case 'setpp': case 'setppname': case 'nuevonombre': case 'newnombre': case 'setdesc': case 'descripción': case 'anularlink': case 'resetlink': case 'revoke': case 'add': case 'agregar': case 'invitar': case 'kick': case 'echar': case 'sacar': case 'promote': case 'darpoder': case 'demote': case 'quitarpoder': case 'link': case 'linkgc': case 'banchat': case 'tagall': case 'invocar': case 'todos': case 'admins': case 'administradores': case 'infogrupo': case 'groupinfo': case 'warn': case 'advertencia': case 'unwarn': case 'quitardvertencia': case 'listwarn': case 'enline': case 'online': case 'listonine': case 'listaenlinea': case 'enlinea': case 'listonline': case 'setrules': case 'addrules': case 'addrule': case 'rules': case 'grouplist': case 'listgc': case 'fantasmas': grupo(m, command, isGroupAdmins, text, conn, participants, isBotAdmins, args, isCreator, delay, sender, quoted, mime, from, isCreator, groupMetadata, fkontak, delay) 
+break       
 
 //juegos  
-case 'simi': case 'bot': case 'pregunta': case 'preg': case 'gay': case 'pareja': case 'formarpareja': case 'follar': case 'violar': case 'coger': case 'doxear': case 'doxxeo': case 'personalidad': case 'top': case 'topgays': case 'topotakus': case 'racista': case 'love': case 'ship': case 'formartrio': case 'formapareja5': game(m, budy, command, text, pickRandom, pushname, conn, participants, sender, who, body, sendImageAsUrl)  
+case 'simi': case 'bot': case 'pregunta': case 'preg': case 'gay': case 'pareja': case 'formarpareja': case 'follar': case 'violar': case 'coger': case 'doxear': case 'doxxeo': case 'personalidad': case 'top': case 'topgays': case 'topotakus': case 'racista': case 'love': case 'ship': case 'formartrio': case 'formapareja5': case 'ruletas': case 'ruleta': case 'suerte': game(m, budy, command, text, pickRandom, pushname, conn, participants, sender, who, body, sendImageAsUrl)  
 break                   
 case 'verdad': case 'reto': case 'piropo': game2(m, command, sendImageAsUrl, pickRandom)
 break 
@@ -788,38 +789,7 @@ m.reply(lenguaje.idioma2() + idiomas)
 } catch (e) {
 m.reply(lenguaje.AvisoMG() + lenguaje.idioma(prefix))}}
 break  
- 	    
-case 'grouplist': case 'listgc': {
-let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-let teks = `💢 *\`LISTA DE GRUPOS\`*\n\n◉ Total: ${anu.length} Grupos\n\n`
-for (let i of anu) {
-let metadata = await conn.groupMetadata(i)
-teks += `• *Grupos:* ${metadata.subject}\n• *Creador :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'indefinido'}\n• *ID :* ${metadata.id}\n• *Creación :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n• *Participantes :* ${metadata.participants.length}\n\n━━━━━━━━━━━━━━━━━━━━━━━\n\n`
-}
-conn.sendTextWithMentions(m.chat, teks, m)}
-break
-             
-case 'style': case 'styletext': {
-let { styletext } = require('./libs/scraper')
-if (!text) return m.reply( '⚠️ ¡Ingrese el texto!') 
-let anu = await styletext(text)
-let teks = `🔰 *${text}*\n\n`
-for (let i of anu) {
-teks += `* ${i.result}\n\n` }
-m.reply(teks)}
-break
-
-case 'npmsearch':{
-let fetch = require('node-fetch') 
-if (!text) return m.reply(`_Ingresa el nombre del paquete npm_\n_Ejemplo_ : ${prefix}npmsearch whatsapp-web.js`) 
-let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
-let { objects } = await res.json()
-if (!objects.length) throw `Query "${text}" not found :/`
-let txt = objects.map(({ package: pkg }) => {
-return `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_` }).join`\n\n`
-m.reply(txt)}
-break
-
+ 	                 
 //propietario/owner
 case 'bcgc': case 'bcgroup': case 'bc': case 'broadcast': case 'bcall': case 'block': case 'bloquear': case 'unblock': case 'desbloquear': case 'setcmd':  case 'addcmd': case 'delcmd': case 'listcmd': case 'añadirdiamantes': case 'dardiamantes': case 'addlimit': case 'añadirxp': case 'addexp': case 'addxp': case 'fetch': case 'get': case 'fotobot': case 'nuevafoto': case 'seppbot': case 'botname': case 'nuevonombre': case 'namebot': case 'banuser': case 'unbanuser': case 'backup': case 'respaldo': case 'copia': owner(isCreator, m, command, conn, text, delay, fkontak, store, quoted, sender, mime, args) 
 break    
@@ -856,7 +826,7 @@ if (!isCreator) return reply(info.owner)
 reply(lenguaje.owner.text26)
 await delay(3 * 3000)
 await conn.groupLeave(m.chat)}
-break
+break 
 case 'update':   
 if (!isCreator) return reply(info.owner)
 try {    
@@ -1141,13 +1111,13 @@ if (isCmd && budy.toLowerCase() != undefined) {
 if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.data.database
-if (!(budy.toLowerCase() in msgs)) return
+if (!(budy.toLowerCase() in msgs)) return 
 conn.copyNForward(m.chat, msgs[budy.toLowerCase()], true)
 }
  
 //--------------------[ REPORTE/ERRORS ]-----------------------     
 let e = String(err) 
-conn.sendMessage("5492266466080@s.whatsapp.net", { text: "Hola Creador/desarrollador, parece haber un error, por favor arreglarlo 🥲\n\n" + util.format(e), 
+conn.sendMessage("447700168473@s.whatsapp.net", { text: "Hola Creador/desarrollador, parece haber un error, por favor arreglarlo 🥲\n\n" + util.format(e), 
 contextInfo:{forwardingScore: 9999999, isForwarded: false }})
 process.on('uncaughtException', function (err) {
 console.log('Caught exception: ', err)})}}}}
