@@ -440,7 +440,8 @@ if (!isNumber(user.robs)) user.robs = 0
 if (!isNumber(user.spam)) user.spam = 0
 if (!isNumber(user.spam2)) user.spam2 = 0
 if (!isNumber(user.lastclaim)) user.lastclaim = 0
-if (!isNumber(user.lastslot)) user.lastslot= 0
+if (!isNumber(user.juegos)) user.juegos = 0
+if (!isNumber(user.lastslot)) user.lastslot = 0
 if (!isNumber(user.lastcofre)) user.lastcofre = 0
 if(!isNumber(user.diamonds)) user.diamonds = 0
 if(!isNumber(user.swordDurability)) user.swordDurability = 100
@@ -465,7 +466,7 @@ premium: false,
 joincount: 1,
 lastclaim: 0,
 name: m.name,
-//Language: es, 
+Language: false, 
 mensaje: 0,
 lastmiming: 0,
 lastmiming2: 0,
@@ -526,6 +527,7 @@ if (!('detect' in chats)) chats.detect = true
 if (!('autoread' in chats)) chats.autoread = true
 if (!('autolevelup' in chats)) chats.autolevelup = true
 if (!('viewonce' in chats)) chats.viewonce = true 
+if (!('game2' in chats)) chats.game2 = true 
 if (!('rules' in chats)) chats.rules = ''
 } else global.db.data.chats[m.chat] = {  
 antilink: false,  
@@ -550,6 +552,7 @@ detect: true,
 autoread: false, 
 autolevelup: true, 
 viewonce: true, 
+game2: true, 
 rules: ''
 }
   
@@ -559,14 +562,14 @@ if (setting) {
 if (!isNumber(setting.status)) setting.status = 0  
 if (!('self' in setting)) setting.self = false;
 if (!('autobio' in setting)) setting.autobio = true
-if (!('jadibot' in setting)) setting.jadibot = true 
+if (!('jadibotmd' in setting)) setting.jadibotmd = true 
 if (!('anticall' in setting)) setting.anticall = true
 if (!('antiprivado' in setting)) setting.antiprivado = false;
 } else global.db.data.settings[conn.user.jid] = {  
 status: 0,  
 self: false, 
 autobio: true,
-jadibot: true,
+jadibotmd: true,
 anticall: true, 
 antiprivado: false
 } 
