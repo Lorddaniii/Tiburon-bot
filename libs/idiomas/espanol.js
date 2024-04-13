@@ -1,6 +1,6 @@
 const lenguaje = () => { return 'es' } //Español  
 
-//index.js
+//index.js 
 const tmp = () => { return `╭━─━─━─≪🔆≫─━─━─━╮\n│SE LIMPIO LA CARPETA TMP CORRECTAMENTE\n╰━─━─━─≪🔆≫─━─━─━╯` } 
 const session = () => { return `🟢 NO HAY ARCHIVO POR ELIMINAR` }
 const errorsession = () => { return `🟢 ALGO SALIO MAL DURANTE LA ELIMINACIÓN, ARCHIVO NO ELIMINADOS` }
@@ -334,46 +334,16 @@ text14: `_*ᴼʲᶦᵗᵒ ᵉˢᶜʳᶦᵇᵉ ᵗᵃˡ ʸ ᶜᵒᵐᵒ ᵉˢᵗ�
 *ᵠᵘᶦᵉʳᵉ ᵃᵍʳᵉᵍᵃ ᵃˡᵍᵘⁿ ᵃᵘᵈᶦᵒ ⁿᵘᵉᵛᵒ ᵉˢᶜʳᶦᵇᶦʳˡᵉ ᵃ ᵐᶦ ᶜʳᵉᵃᵈᵒʳ ᵘʷᵘ*`,
 text15: (vs) => `*\`🤔 Que hay de nuevo? 🤗\`*\n\n*🌐 Nueva Version:* [ ${vs} ]\n\n*Nuevo comando:*
 
-\`🎮👾 Nuevo juegos :\`
-#math
-#matematicas
-#ttt
-#tictactoe
+💢 Buscar información de NPM 
+#npmsearch   
 
-\`🔍 Se han agregado nuevos buscadores :\`
-#tiktokstalk
-#pinterest
-#wikipedia
-#wiki
+🔵 𝐆𝐞𝐧𝐞𝐫𝐚𝐥 ժׁׅ݊ꪱׁׁׁׅׅׅׅ꯱ꫀׁׅܻ݊݊ꪀ̃ᨵׁׅׅׅ꯱ ᗪᗴ ʟᴇᴛʀᴀ :ᴠ
+#styletext 
+#style
 
-\`💢Comando ramdow :\`
-#china
-
-\`🪄 Ahora con NovaBot puede crear logos personalizado :\`
-#logos
-
-\`🔱 Ahora puede agregar la reglas del tu grupo con :\`
-#setrules
-#addrules
-
-> *Para vez la reglas actual del Grupo*
-#rules 
-
-\`🏦 Ahora puede guarda tu dinero (diamante) el Banco con:\`
-#dep
-#depositar
-
-\`🏦 También puede retirar dinero (diamante) del Banco con :\`
-#retirar
-
-\`📍Ahora puede realizar transferencia a otros usuarios con :\`
-#transferir
-#transfer
-
-\`🔰Mejorar tu grupo con NovaBot protegiéndolos de todos tipo de spam:\`
-> (mira todos los ajuste de la configuración de tu grupo) 
-#enable 
-#configurar 
+👾 Nuevo juegos:
+#ruletas
+#suerte
 
 > *⚡ Se esta mejoraron la estabilidad del bot.* 
 
