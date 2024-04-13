@@ -579,7 +579,7 @@ break
        
 //jadibot/serbot  
 case 'serbot': case 'jadibot': case 'qr':
-if (!global.db.data.chats[m.chat].jadibotmd) return m.reply(`*⚠️ Este comando fue desabilitado por el creador*`)
+//if (!global.db.data.chats[m.chat].jadibotmd) return m.reply(`*⚠️ Este comando fue desabilitado por el creador*`)
 jadibot(conn, m, command, text, args, sender)
 break  
 case 'deljadibot': case 'stop': 
