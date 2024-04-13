@@ -249,6 +249,25 @@ return m.reply(info.error)
 console.log(e) 
 }}
 
+if (command == 'style' || command == 'styletext') {
+let { styletext } = require('../libs/scraper')
+if (!text) return m.reply( '⚠️ ¡Ingrese el texto!') 
+let anu = await styletext(text)
+let teks = `🔰 *${text}*\n\n`
+for (let i of anu) {
+teks += `* ${i.result}\n\n` }
+m.reply(teks)}
+
+if (command == 'npmsearch') {
+let fetch = require('node-fetch') 
+if (!text) return m.reply(`_Ingresa el nombre del paquete npm_\n_Ejemplo_ : ${prefix}npmsearch whatsapp-web.js`) 
+let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
+let { objects } = await res.json()
+if (!objects.length) throw `Query "${text}" not found :/`
+let txt = objects.map(({ package: pkg }) => {
+return `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_` }).join`\n\n`
+m.reply(txt)}
+
 if (command == 'horario') {
 const moment = require('moment-timezone') 
   const tzPE = moment().tz('America/Lima').format('DD/MM HH:mm');

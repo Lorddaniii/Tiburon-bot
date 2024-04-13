@@ -8,7 +8,7 @@ async function enable(m, command, isGroupAdmins, text, command, args, isBotAdmin
 if (global.db.data.users[m.sender].registered < true) return m.reply(info.registra)
 let user = global.db.data.users[m.sender]
 if (command == 'enable' || command == 'configuracion' || command == 'configurar') {
-const {welcome, antilink, antiFake, antiArabe, detect, autosticker, antiNsfw, modeadmin, chatbot, audios, autolevelup, antitoxic, antiprivado, anticall, antilink2, AntiTiktok, AntiTelegram, AntiFacebook, AntInstagram, AntiYoutube, AntiTwitter, autoread} = global.db.data.chats[m.chat];
+const {welcome, antilink, antiFake, antiArabe, detect, autosticker, antiNsfw, game2, modeadmin, chatbot, audios, autolevelup, antitoxic, antiprivado, anticall, antilink2, AntiTiktok, AntiTelegram, AntiFacebook, AntInstagram, AntiYoutube, AntiTwitter, autoread} = global.db.data.chats[m.chat];
 m.reply(`\`⧼⧼⧼ ${user.Language === 'es' ? 'ＣＯＮＦＩＧＵＲＡＣＩＯ́Ｎ' : user.Language === 'en' ? 'ＳＥＴＴＩＮＧ' : user.Language === 'ar' ? ' جلسة' :  user.Language === 'pt' ? 'ＣＯＮＴＥＸＴＯ' : user.Language === 'id' ? 'ＰＥＮＧＡＴＵＲＡＮ' : user.Language === 'rs' ? 'ПАРАМЕТР' : user.Language} ⧽⧽⧽\`
 
 ${user.Language === 'es' ? '> ✅ Funcion activar\n> ❌ Función desactivada' : user.Language === 'en' ? '> ✅ Function activated\n> ❌ Function deactivated' : user.Language === 'ar' ? '> ✅ الوظيفة مفعلة\n> ❌ الوظيفة معطلة' : user.Language === 'pt' ? '> ✅ Função ativada\n> ❌ Função desativada' : user.Language === 'id' ? '> ✅ Fungsi diaktifkan\n> ❌ Fungsi dinonaktifkan' : user.Language === 'rs' ? '> ✅ Функция активирована\n> ❌ Функция деактивирована' : user.Language}
@@ -65,6 +65,14 @@ user.Language === 'ar' ? '> الوصف: كشف الكلمات السيئة وت�
 user.Language === 'pt' ? '> ᴰᵉˢᶜʳᶦᶜ̧ᵃ̃ᵒ: ᴰᵉᵗᵉᶜᵗᵃᵐ ᵖᵃˡᵃᵛʳᵒ̃ᵉˢ ᵉ ᵃᵛᶦˢᵃᵐ ᵒˢ ᵖᵃʳᵗᶦᶜᶦᵖᵃⁿᵗᵉˢ ᵈᵒ ᴳʳᵘᵖᵒ, ᵃⁿᵗᵉˢ ᵈᵉ ˢᵉʳᵉᵐ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ.' : 
 user.Language === 'id' ? '> Deskripsi: mendeteksi kata-kata buruk dan memperingatkan peserta Grup sebelum tersingkir.' : 
 user.Language === 'rs' ? '> Описание: Они распознают плохие слова и предупреждают участников группы, прежде чем их устраняют.' : user.Language}
+
+* ${prefix}detect on ${game2 ? '✅' : '❌'}
+${user.Language === 'es' ? '> ᴰᵉˢᶜ: ᵃᶜᵗᶦᵛᵃʳ/ᵈᵉˢᵃᶜᵗᶦᵛᵃʳ ᵉˡ ʲᵘᵉᵍᵒ ᵈᵉ ˡᵃ ʳᵘˡᵉᵗᵃ ʳᵘˢᵃ' : 
+user.Language === 'en' ? '> ᴼᶠᶠ: ᵃᶜᵗᶦᵛᵃᵗᵉ/ᵈᵉᵃᶜᵗᶦᵛᵃᵗᵉ ᵗʰᵉ ᴿᵘˢˢᶦᵃⁿ ʳᵒᵘˡᵉᵗᵗᵉ ᵍᵃᵐᵉˢ' : 
+user.Language === 'ar' ? '> إيقاف: تنشيط/إلغاء تنشيط ألعاب الروليت الروسية' : 
+user.Language === 'pt' ? '> ᴰᵉˢˡᶦᵍᵃᵈᵒ: ᵃᵗᶦᵛᵃ/ᵈᵉˢᵃᵗᶦᵛᵃ ᵒˢ ʲᵒᵍᵒˢ ᵈᵉ ʳᵒˡᵉᵗᵃ ʳᵘˢˢᵃ' : 
+user.Language === 'id' ? '> ᴹᵃᵗᶦ: ᵐᵉⁿᵍᵃᵏᵗᶦᶠᵏᵃⁿ/ᵐᵉⁿᵒⁿᵃᵏᵗᶦᶠᵏᵃⁿ ᵖᵉʳᵐᵃᶦⁿᵃⁿ ʳᵒˡᵉᵗ ᴿᵘˢᶦᵃ' : 
+user.Language === 'rs' ? '> Выкл.: активировать/деактивировать русскую рулетку.' : user.Language}
 
 * ${prefix}detect on ${detect ? '✅' : '❌'}
 ${user.Language === 'es' ? '> ᵈᵉˢᶜ : ᵈᵉᵗᵉᶜᵗᵃʳ ⁿᵒᵗᶦᶠᶦᶜᵃᶜᶦᵒⁿᵉˢ ᵈᵉ ᵃᵛᶦˢᵒ ᵉˡ ᵍʳᵘᵖᵒ. ' : 
@@ -339,6 +347,17 @@ m.reply(`✅ *${command}* ${lenguaje.enable.text1}`)
 global.db.data.chats[m.chat].antiNsfw = false
 m.reply(`🟢 *${command}* ${lenguaje.enable.text2}`)}}
 
+if (command == 'game2') {
+if (!m.isGroup) return m.reply(info.group)
+if (!isGroupAdmins) return m.reply(info.admin)
+if (!text) return m.reply(`${lenguaje.enable.text}\n\n*• ${prefix + command} on*\n*• ${prefix + command} off*`)
+if (args[0] === "on") {
+global.db.data.chats[m.chat].game2 = true
+m.reply(`✅ *${command}* ${lenguaje.enable.text1}`)
+} else if (args[0] === "off") {
+global.db.data.chats[m.chat].game2 = false
+m.reply(`🟢 *${command}* ${lenguaje.enable.text2}`)}}
+
 if (command == 'modoadmin' || command == 'soloadmin' || command == 'modoadmins') {
 if (!m.isGroup) return m.reply(info.group)
 if (!isBotAdmins) return m.reply(info.botAdmin)
@@ -377,10 +396,10 @@ if (command == 'modojadibot' || command == 'jadibot') {
 if (!isCreator) return m.reply(info.owner)
 if (!text) return m.reply(`${lenguaje.enable.text}\n\n*• ${prefix + command} on*\n*• ${prefix + command} off*`)
 if (args[0] === "on") {
-global.db.data.chats[m.chat].jadibot = true
+global.db.data.chats[m.chat].jadibotmd = true
 m.reply(`✅ *${command}* ${lenguaje.enable.text1}`)
 } else if (args[0] === "off") {
-global.db.data.chats[m.chat].jadibot = false
+global.db.data.chats[m.chat].jadibotmd = false
 m.reply(`🟢 *${command}* ${lenguaje.enable.text2}`)}}
 
 if (command == 'autoread' || command == 'autovisto') {
