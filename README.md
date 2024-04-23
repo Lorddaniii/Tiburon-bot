@@ -100,10 +100,7 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 
 ------------------ 
 
-### 🟢 INFINITY-HOST
-[![blog](https://img.shields.io/badge/Cafirexos-NovaBotMD-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
-]()
-> Activar NovaBot-MD 24/7 en infinity-host
+### 🟢 Activar NovaBot-MD 24/7 en infinity-host
 
 <a href="https://dashboard.infinitywa.xyz"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
 ### Información del Host
