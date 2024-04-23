@@ -100,6 +100,23 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 
 ------------------ 
 
+### 🟢 INFINITY-HOST
+[![blog](https://img.shields.io/badge/Cafirexos-NovaBotMD-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+]()
+> Activar NovaBot-MD 24/7 en infinity-host
+
+<a href="https://dashboard.infinitywa.xyz"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
+### Información del Host
+
+- **Página:** [`Cafirexos`](https://dashboard.infinitywa.xyz)
+- **Dashboard:** [`Aquí`](https://dashboard.infinitywa.xyz)
+- **Panel:** [`Aquí`](https://live.panel-infinitywa.store)
+- **Grupo de WhatsApp:** [`Aquí`](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
+- **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
+- **Support:** [`Bot exclusivo`](https://wa.me/message/FETBF7YBO37CG1)
+
+------------------  
+
 ###  🚀 VORTEXUSCLOUD HOST
 [![blog](https://img.shields.io/badge/Vortexuscloud-NovaBotMD-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 ](https://youtu.be/Xp2jRbG_v8o?si=nSAj4vUdz9tS31pO)
