@@ -108,7 +108,7 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 <a href="https://dashboard.infinitywa.xyz"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
 ### Información del Host
 
-- **Página:** [`Cafirexos`](https://dashboard.infinitywa.xyz)
+- **Página:** [`Click aqui`](https://dashboard.infinitywa.xyz)
 - **Dashboard:** [`Aquí`](https://dashboard.infinitywa.xyz)
 - **Panel:** [`Aquí`](https://live.panel-infinitywa.store)
 - **Grupo de WhatsApp:** [`Aquí`](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
