@@ -100,7 +100,8 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 
 ------------------ 
 
-### 🟢 Activar NovaBot-MD 24/7 en infinity-host
+### 🟢 INFINITY HOST
+> Activar NovaBot-MD 24/7 en infinity-host
 
 <a href="https://dashboard.infinitywa.xyz"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
 ### Información del Host
@@ -112,6 +113,7 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 - **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
 - **Support:** [`Bot exclusivo`](https://wa.me/message/FETBF7YBO37CG1)
 
+- [x] **Configuración** <details><summary>**Ajustes del Servidor - NovaBot-MD**</summary><img src="https://qu.ax/oBeS.jpg"></details>
 ------------------  
 
 ###  🚀 VORTEXUSCLOUD HOST
