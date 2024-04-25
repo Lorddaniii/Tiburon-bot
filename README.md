@@ -89,7 +89,7 @@ Detener el bot apretado CTRL y aplastas Z en tu teclado, darle enter y escribe:
 ```bash
 grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/elrebelde21/NovaBot-MD/master/update.sh | bash
 ```
-Para que no pierda su progreso en CuriosityBot, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
+Para que no pierda su progreso en NovaBot-MD, estos comandos realizarán un respaldo de su `database.json` y se agregará a la versión más reciente.
 
 > Warning Estos comandos solo funcionan para TERMUX, REPLIT, LINUX
 
@@ -101,6 +101,8 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 ------------------ 
 
 ### 🟢 INFINITY HOST
+[![blog](https://img.shields.io/badge/Infinity-Wa-NovaBot-MD-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+](https://youtu.be/o6ZSpMOsvHs?si=fzwZIDN5LPE1w0pI)
 > Activar NovaBot-MD 24/7 en infinity-host
 
 <a href="https://dashboard.infinitywa.xyz"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
