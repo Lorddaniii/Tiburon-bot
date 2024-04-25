@@ -29,10 +29,6 @@
     
 <a href="wa.me/573183650526" target="blank"><img src="https://img.shields.io/badge/Creador-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
-### `🟢 Bot Oficial 🟢`
-<a href="https://wa.me/584125418042" target="blank"><img src="https://img.shields.io/badge/NovaBot oficial-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
-</a>
-
 ### Quieres probar la funciones del bot, antes de instalar, probar el bot aquí
 
 [![Grupos](https://img.shields.io/badge/Grupos-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/Em4Byf4w5VgHObPvZQlfnM) 
@@ -101,7 +97,7 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 ------------------ 
 
 ### 🟢 INFINITY HOST
-[![blog](https://img.shields.io/badge/Infinity-Wa-NovaBot-MD-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
+[![blog](https://img.shields.io/badge/infinity-NovaBot-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 ](https://youtu.be/o6ZSpMOsvHs?si=fzwZIDN5LPE1w0pI)
 > Activar NovaBot-MD 24/7 en infinity-host
 
