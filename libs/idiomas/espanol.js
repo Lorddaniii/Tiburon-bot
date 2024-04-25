@@ -212,22 +212,24 @@ text20: (fb, md) => `╭─────────────┈⊷
 
 > (𝘌𝘴𝘤𝘢𝘯𝘦𝘢𝘳 𝘦𝘭 𝘘𝘙, 𝘙𝘢𝘱𝘪𝘥𝘰)
 
-🚀 --------[ Vortexuscloud host ]--------- 🚀
-> 💞 Agraciemiento a: mauro 
+🚩 --------[ Infinity-Host ]--------- 🚩
+> *🆕 Nuevo host propio*
 
-https://youtube.com/@vortexuscloud
+*🔰 Tutorial de como crear cuenta el la Dashboard y crear un servidor:*
+https://youtu.be/o6ZSpMOsvHs?si=fzwZIDN5LPE1w0pI
 
-> Pagina oficial :
-https://vortexuscloud.com
+*📍Dashboard:*
+https://dashboard.infinitywa.xyz
 
-> dashboard:
-https://dash.vortexuscloud.com
+*✅ Panel:*
+https://live.panel-infinitywa.store
 
-> panel:
-https://panel.vortexuscloud.com
+*🧰 Bot de Support: exclusivo para host* 
+wa.me/message/FETBF7YBO37CG1
 
-> Canal de WhatsApp sobre informacion del host 
-https://whatsapp.com/channel/0029Va8ZD6O3mFXxTPl1m13A
+*⚙️Grupo support:*
+> Dudas *UNICAMENTE SOBRE EL HOST*
+https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV
 
 🚀 --------[ Cafirexos host ]--------- 🚀
 
@@ -245,7 +247,24 @@ https://chat.whatsapp.com/FBtyc8Q5w2iJXVl5zGJdFJ
 (Pregunta por Diego: cafirexos) 
 
 *Canal de WhatsApp:*
-https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q`, 
+https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q
+
+🚀 --------[ Vortexuscloud host ]--------- 🚀
+> 💞 Agraciemiento a: mauro 
+
+https://youtube.com/@vortexuscloud
+
+> Pagina oficial :
+https://vortexuscloud.com
+
+> dashboard:
+https://dash.vortexuscloud.com
+
+> panel:
+https://panel.vortexuscloud.com
+
+> Canal de WhatsApp sobre informacion del host 
+https://whatsapp.com/channel/0029Va8ZD6O3mFXxTPl1m13A`, 
 text21: `*𝙸𝙽𝙶𝚁𝙴𝚂𝙴 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 𝙲𝙾𝙽 𝙵𝙰𝙻𝙻𝙾𝚂*\n\n*𝙴𝙹𝙴𝙼𝙿𝙻𝙾:`, 
 text22: `𝙴𝙻 𝚁𝙴𝙿𝙾𝚁𝚃𝙴 𝙵𝚄𝙴 𝙴𝙽𝚅𝙸𝙰𝙳𝙾 𝙰 𝙼𝙸 𝙲𝚁𝙴𝙰𝙳𝙾𝚁, 𝙽𝙾𝚂 𝙲𝙾𝙽𝚃𝙰𝚁𝙴𝙼𝙾𝚂 𝙲𝙾𝙽 𝚄𝚂𝚃𝙴𝙳 𝚂𝙸 𝙴𝚂 𝙽𝙴𝙲𝙴𝚂𝙰𝚁𝙸𝙾, 𝙳𝙴 𝚂𝙴𝚁 𝙵𝙰𝙻𝚂𝙾 𝚂𝙴𝚁𝙰 𝙸𝙶𝙽𝙾𝚁𝙰𝙳𝙾 𝚈 𝙱𝙻𝙾𝚀𝚄𝙴𝙰𝙳𝙾 𝙳𝙴𝙻 𝙱𝙾𝚃*`, 
 text23: (paypal) => `*╼╼╼╼╼╼╼[ 💖 DONACION 💖 ]╾╾╾╾╾╾╾╾*\n\n*Hola 👋, si quieres apoyar este proyecto, puedes hacerlo a través de donaciones voluntarias por PayPal, Mercado Pago o Naranja X.*\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️PayPal:*\n${paypal}\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️Mercado pago:*\n*• Alias :* OficialGB\n*• CVU :* 0000003100059201491917\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ Naranja X:*\n*• Alias :* OficialGL\n*• CVU :* 4530000800017922067114`, 

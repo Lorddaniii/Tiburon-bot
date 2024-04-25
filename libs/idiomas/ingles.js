@@ -210,22 +210,24 @@ text20: `╭─────────────┈⊷
 
 (Scan the QR, Fast)
 
-🚀 --------[ Vortexuscloud host ]--------- 🚀
-💞 Thanks to: mauro 
+🚩 --------[ Infinity-Host ]--------- 🚩
+*🆕 New self-hosted host*
 
-• https://youtube.com/@vortexuscloud
+*🔰 Tutorial on how to create an account on the Dashboard and create a server:*
+https://youtu.be/o6ZSpMOsvHs?si=fzwZIDN5LPE1w0pI
 
-• official page:
-https://vortexuscloud.com
+*📍Dashboard:*
+https://dashboard.infinitywa.xyz
 
-• dashboard:
-https://dash.vortexuscloud.com
+*✅ Panel:*
+https://live.panel-infinitywa.store
 
-• panel:
-https://panel.vortexuscloud.com
+*🧰 Support Bot: exclusive for hosts*
+wa.me/message/FETBF7YBO37CG1
 
-• WhatsApp channel about host information
-• https://whatsapp.com/channel/0029Va8ZD6O3mFXxTPl1m13A
+*⚙️Support Group:*
+> Questions *ONLY ABOUT THE HOST*
+https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV
 
 🚀 --------[ Cafirexos host ]--------- 🚀
 
@@ -243,7 +245,24 @@ https://chat.whatsapp.com/FBtyc8Q5w2iJXVl5zGJdFJ
 (Ask for Diego: cafirexos)
 
 *WhatsApp channel:*
-https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q`, 
+https://whatsapp.com/channel/0029VaFVSkRCMY0KFmCMDX2q
+
+🚀 --------[ Vortexuscloud host ]--------- 🚀
+💞 Thanks to: mauro 
+
+• https://youtube.com/@vortexuscloud
+
+• official page:
+https://vortexuscloud.com
+
+• dashboard:
+https://dash.vortexuscloud.com
+
+• panel:
+https://panel.vortexuscloud.com
+
+• WhatsApp channel about host information
+• https://whatsapp.com/channel/0029Va8ZD6O3mFXxTPl1m13A`, 
 text21: `*𝙴𝙽𝚃𝙴𝚁 𝚃𝙷𝙴 𝙲𝙾𝙼𝙼𝙰𝙽𝙳 𝚆𝙸𝚃𝙷 𝙵𝙰𝚄𝙻𝚃𝚂*\n\n*𝙴𝚇𝙰𝙼𝙿𝙻𝙴:*`, //
 text22: `*𝚃𝙷𝙴 𝚁𝙴𝙿𝙾𝚁𝚃 𝚆𝙰𝚂 𝚂𝙴𝙽𝚃 𝚃𝙾 𝙼𝚈 𝙲𝚁𝙴𝙰𝚃𝙾𝚁, 𝚆𝙴 𝚆𝙸𝙻𝙻 𝙲𝙾𝙽𝚃𝙰𝙲𝚃 𝚈𝙾𝚄 𝙸𝙵 𝙽𝙴𝙲𝙴𝚂𝚂𝙰𝚁𝚈, 𝙸𝙵 𝙸𝚃 𝙸𝚂 𝙵𝙰𝙻𝚂𝙴 𝙸𝚃 𝚆𝙸𝙻𝙻 𝙱𝙴 𝙸𝙶𝙽𝙾𝚁𝙴𝙳 𝙰𝙽𝙳 𝙱𝙻𝙾𝙲𝙺𝙴𝙳 𝙵𝚁𝙾𝙼 𝚃𝙷𝙴 𝙱𝙾𝚃*`, 
 text23: `*╼╼╼╼╼╼╼[ 💖 donation 💖 ]╾╾╾╾╾╾╾╾*\n\n*Hello 👋, if you want to support this project, you can do so through voluntary donations through PayPal, Mercado Pago or Naranja X.*\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ PayPal:*\nhttps://paypal.me/OfcGB\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ Payment market:*\n*• Alias :* OficialGB\n*• CVU :* 0000003100059201491917\n\n╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍\n\n*❇️ Orange X:*\n*• Alias :* OficialGL\n*• CVU :* 4530000800017922067114`, 

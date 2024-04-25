@@ -211,6 +211,25 @@ text20: `╭─────────────┈⊷
 
 (Digitalize o QR rapidamente)
 
+🚩 --------[ Infinity-Host ]--------- 🚩
+*🆕 Novo host auto-hospedado*
+
+*🔰 Tutorial de como criar uma conta no Dashboard e criar um servidor:*
+https://youtu.be/o6ZSpMOsvHs?si=fzwZIDN5LPE1w0pI
+
+*📍Painel:*
+https://dashboard.infinitywa.xyz
+
+*✅Painel:*
+https://live.panel-infinitywa.store
+
+*🧰 Support Bot: exclusivo para hosts*
+wa.me/message/FETBF7YBO37CG1
+
+*⚙️Grupo de Apoio:*
+> Dúvidas *SOMENTE SOBRE O ANFITRIÃO*
+https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV
+
 🚀 --------[ Vortexuscloud host ]--------- 🚀
 💞 Graças a: mauro 
 
