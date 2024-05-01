@@ -370,7 +370,7 @@ m.reply(`✅ *${command}* ${lenguaje.enable.text1}\n\n${lenguaje.enable.text4}`)
 global.db.data.chats[m.chat].modeadmin = false
 m.reply(`🟢 *${command}* ${lenguaje.enable.text2}\n\n${lenguaje.enable.text5}`)}}
 
-if (command == 'antiprivado' || command == 'antipv') {
+if (command == 'antiprivado') {
 if (!isCreator) return m.reply(info.owner)
 if (!text) return m.reply(`${lenguaje.enable.text}\n\n*• ${prefix + command} on*\n*• ${prefix + command} off*`)
 if (args[0] === "on") {
@@ -382,6 +382,18 @@ global.db.data.settings[numBot].antiprivado = false
 //conn.antiprivado = false
 m.reply(`🟢 *${command}* ${lenguaje.enable.text2}`)}}
 
+if (command == 'antipv') {
+if (!isCreator) return m.reply(info.owner)
+if (!text) return m.reply(`${lenguaje.enable.text}\n\n*• ${prefix + command} on*\n*• ${prefix + command} off*`)
+if (args[0] === "on") {
+global.db.data.settings[numBot].antipv = true
+//conn.antiprivado = true
+m.reply(`✅ *${command}* ${lenguaje.enable.text1}`)
+} else if (args[0] === "off") {
+global.db.data.settings[numBot].antipv = false
+//conn.antiprivado = false
+m.reply(`🟢 *${command}* ${lenguaje.enable.text2}`)}}
+       
 if (command == 'anticall' || command == 'antillamada') {
 if (!isCreator) return m.reply(info.owner)
 if (!text) return m.reply(`${lenguaje.enable.text}\n\n*• ${prefix + command} on*\n*• ${prefix + command} off*`)
