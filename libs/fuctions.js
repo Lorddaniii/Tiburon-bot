@@ -565,13 +565,15 @@ if (!('autobio' in setting)) setting.autobio = true
 if (!('jadibotmd' in setting)) setting.jadibotmd = true 
 if (!('anticall' in setting)) setting.anticall = true
 if (!('antiprivado' in setting)) setting.antiprivado = false;
+if (!('antipv' in setting)) setting.antipv = false;	
 } else global.db.data.settings[conn.user.jid] = {  
 status: 0,  
 self: false, 
 autobio: true,
 jadibotmd: true,
 anticall: true, 
-antiprivado: false
+antiprivado: false, 
+antipv: false
 } 
 
 global.db.data.sticker = global.db.data.sticker || {} // sticker for addcmd   
