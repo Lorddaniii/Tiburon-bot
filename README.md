@@ -1,25 +1,16 @@
-> <b>  🚀 Version 1.1.0 </b>
-
-
-<p align="center">
-<a href="#"><img title="NovaBot-MD" src="https://telegra.ph/file/343e60521da533ea8a2d3.jpg/badge/a -purple?colorA=%cc33ff&colorB=%cc33ff&style=for-the-badge"></a>
+<h1 align="center">‧  Bot Tiburon ‧
 </p>
-<p align="center">
-<a href="#"><img title="The-LoliBot-MD" src="https://img.shields.io/badge/SI TE AGRADA EL REPOSITORIO APOYAME CON UNA 🌟 ¡GRACIAS! -red?colorA=%255ff0000&colorB=%23017e40&style=for-the-badge"></a> 
-<a href="#"><img title="LoliBot-MD" src="https://img.shields.io/badge/COMPATIBLE CON LA VERSIÓN MULTI DISPOSITIVOS DE WHATSAPP-red?colorA=%F77F48FF&colorB=%F77F48FF&style=for-the-badge">
-<div align="center">
-<a href="https://facebook.com/groups/872989990425789/">
-<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook">
-</a>
-<a href="https://www.youtube.com/@elrebelde.21">
-<img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube">
-</a>
-<a href="https://www.tiktok.com/@lolibot_?_t=8ge2zeRZ04r&_r=1" target="_blank"> <img src="https://img.shields.io/badge/-TikTok-%23E4405F?style=for-the-badge&logo=tiktok&logoColor=black" target="_blank"></a> <img src="https://github.com/siegrin/siegrin/blob/main/Assets/Handshake.gif" height="30px">
-</a>
-<a href="https://paypal.me/OfcGB" target="_blank"> <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" target="_blank"></a> <img src="https://github.com/siegrin/siegrin/blob/main/Assets/Handshake.gif" height="30px">
-</a>
-    
-[![Enlaces](https://img.shields.io/badge/Encontra_todos_los_enlace_en_un_único_lugar-000000%7D?style=for-the-badge&logo=biolink&logoColor=white)](https://atom.bio/lolibot)
+<p>
+        <img src= "https://files.yande.re/sample/b8ccadce33bca14da35200ac4cba7a0d/yande.re%20693163%20sample%20gawr_gura%20hololive%20hololive_english%20luzzi_%28milllim%29%20see_through%20tail.jpg">
+    </p>
+    <p align="center">
+        <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+    </p>
+    <p>
+        <a href="https://github.com/Lorddaniii"><img title="Author"    src="https://img.shields.io/badge/Author-Daniii-purple.svg?style=for-the-badge&logo=github"></a>
+    </p>
+    <p>
+
 </div>
     
 ### `👑 DUDAS SOBRE EL BOT?, CONTACTAME 👑`
