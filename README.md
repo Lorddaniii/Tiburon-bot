@@ -143,25 +143,4 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 - [x] **Configuración** <details><summary>**Ajustes del Servidor - NovaBot-MD**</summary><img src="https://telegra.ph/file/38d1458d37957d7323e7b.jpg"></details>
 
 ------------------ 
-### 🟢 ACTIVAR EN CODES SPACES 
 
-[`CREAR SERVIDOR`](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=elrebelde21/NovaBot-MD&ref=main&geo=UsEast)
-
------------------- 
-
-## `𝙴𝙳𝙸𝚃𝙾𝚁 𝚈 𝙿𝚁𝙾𝙿𝙸𝙴𝚃𝙰𝚁𝙸𝙾 𝙳𝙴𝙻 𝙱𝙾𝚃`
-
-<a href="https://github.com/elrebelde21"><img src="https://github.com/elrebelde21.png" width="250" height="250" alt="elrebelde21"/></a>
-
-## `👑 𝙲𝙾𝙻𝙰𝙱𝙾𝚁𝙰𝙳𝙾𝚁𝙴𝚂 👑`
-
-[![GataNina-Li](https://github.com/GataNina-Li.png?size=100)](https://github.com/GataNina-Li) 
-[![Skidy89](https://github.com/Skidy89.png?size=100)](https://github.com/Skidy89) 
-[![AzamiJs](https://github.com/AzamiJs.png?size=100)](https://github.com/AzamiJs)  
-[![KatashiFukushima](https://github.com/KatashiFukushima.png?size=100)](https://github.com/KatashiFukushima)
-[![sensei-ofc](https://github.com/sensei-ofc.png?size=100)](https://github.com/sensei-ofc)
-[![diegojadibot](https://github.com/Diego-YL-177.png?size=100)](https://github.com/Diego-YL-177)
-
-## `𝙰𝙶𝚁𝙰𝙳𝙴𝙲𝙸𝙼𝙸𝙴𝙽𝚃𝙾𝚂 & 𝙲𝚁𝙴𝙳𝙸𝚃𝙾𝚂` 
-<a href="https://github.com/ferhacks"><img src="https://github.com/ferhacks.png" width="150" height="150" alt="ferhacks"/></a>
-<a href="https://github.com/WhiskeySockets/Baileys"><img src="https://github.com/WhiskeySockets.png" width="150" height="150" alt="adiwajshing"/></a>
